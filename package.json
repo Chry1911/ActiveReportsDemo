@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@grapecity/activereports": "^5.2.6",
+    "@grapecity/activereports-localization": "^5.2.6",
+    "@grapecity/activereports-react": "^5.2.6",
     "next": "16.0.8",
     "react": "19.2.1",
     "react-dom": "19.2.1"
