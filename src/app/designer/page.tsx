@@ -1,13 +1,12 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
+import dynamicImport from "next/dynamic";
 
-// Import dei CSS del Viewer/Designer e della localizzazione
-import "@grapecity/activereports-localization";
+export const dynamic = 'force-dynamic';
 
 // Disabilita SSR per i componenti ARJS
-const ARJSViewer = dynamic(async () => {
+const ARJSViewer = dynamicImport(async () => {
   const mod = await import("@grapecity/activereports-react");
   const Comp = mod.Viewer as any;
   return React.forwardRef<any, React.ComponentProps<typeof Comp>>((props, ref) => (
@@ -15,7 +14,7 @@ const ARJSViewer = dynamic(async () => {
   ));
 }, { ssr: false });
 
-const ARJSDesigner = dynamic(() => import("@grapecity/activereports-react").then(m => m.Designer), { ssr: false });
+const ARJSDesigner = dynamicImport(() => import("@grapecity/activereports-react").then(m => m.Designer), { ssr: false });
 
 // Template di DataSource/Datasets predefiniti (Northwind API)
 const dataSources = [
@@ -63,6 +62,11 @@ const dataSources = [
 export default function DesignerPage() {
   const viewerRef = React.useRef<any>(null);
   const [viewMode, setViewMode] = React.useState(false);
+
+  React.useEffect(() => {
+    // Import della localizzazione solo lato client
+    import("@grapecity/activereports-localization");
+  }, []);
 
   const onRender = async (reportInfo: any) => {
     // Passa alla modalità viewer e apre la definizione del report

@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
+import dynamicImport from "next/dynamic";
 
-import "@grapecity/activereports-localization";
+export const dynamic = 'force-dynamic';
 
-const ARJSViewer = dynamic(async () => {
+const ARJSViewer = dynamicImport(async () => {
   const mod = await import("@grapecity/activereports-react");
   const Comp = mod.Viewer as any;
   return React.forwardRef<any, React.ComponentProps<typeof Comp>>((props, ref) => (
@@ -17,6 +17,9 @@ export default function ViewerPage() {
   const viewerRef = React.useRef<any>(null);
 
   React.useEffect(() => {
+    // Import della localizzazione solo lato client
+    import("@grapecity/activereports-localization");
+    
     // Esempio di report semplice (RDLX JSON) con una tabella
     const report = {
       Name: "SampleReport",
