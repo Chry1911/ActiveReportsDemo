@@ -5,7 +5,13 @@ import dynamic from "next/dynamic";
 
 import "@grapecity/activereports-localization";
 
-const ARJSViewer = dynamic(() => import("@grapecity/activereports-react").then(m => m.Viewer), { ssr: false });
+const ARJSViewer = dynamic(async () => {
+  const mod = await import("@grapecity/activereports-react");
+  const Comp = mod.Viewer as any;
+  return React.forwardRef<any, React.ComponentProps<typeof Comp>>((props, ref) => (
+    <Comp {...props} ref={ref} />
+  ));
+}, { ssr: false });
 
 export default function ViewerPage() {
   const viewerRef = React.useRef<any>(null);
@@ -49,7 +55,7 @@ export default function ViewerPage() {
       ],
     } as any;
 
-    viewerRef.current?.Viewer.open(report);
+    viewerRef.current?.open(report);
   }, []);
 
   return (

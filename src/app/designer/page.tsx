@@ -7,7 +7,14 @@ import dynamic from "next/dynamic";
 import "@grapecity/activereports-localization";
 
 // Disabilita SSR per i componenti ARJS
-const ARJSViewer = dynamic(() => import("@grapecity/activereports-react").then(m => m.Viewer), { ssr: false });
+const ARJSViewer = dynamic(async () => {
+  const mod = await import("@grapecity/activereports-react");
+  const Comp = mod.Viewer as any;
+  return React.forwardRef<any, React.ComponentProps<typeof Comp>>((props, ref) => (
+    <Comp {...props} ref={ref} />
+  ));
+}, { ssr: false });
+
 const ARJSDesigner = dynamic(() => import("@grapecity/activereports-react").then(m => m.Designer), { ssr: false });
 
 // Template di DataSource/Datasets predefiniti (Northwind API)
@@ -60,7 +67,7 @@ export default function DesignerPage() {
   const onRender = async (reportInfo: any) => {
     // Passa alla modalità viewer e apre la definizione del report
     setViewMode(true);
-    viewerRef.current?.Viewer.open(reportInfo.definition);
+    viewerRef.current?.open(reportInfo.definition);
     return Promise.resolve();
   };
 
