@@ -1,12 +1,12 @@
 {
-  "Type": "report",
   "Name": "FinancialReport",
+  "Width": "8.5in",
   "DataSources": [
     {
       "Name": "FinanceJSON",
       "ConnectionProperties": {
         "DataProvider": "JSON",
-        "ConnectString": "endpoint="
+        "ConnectString": "jsondata=data"
       }
     }
   ],
@@ -15,7 +15,7 @@
       "Name": "SecuritiesData",
       "Query": {
         "DataSourceName": "FinanceJSON",
-        "CommandText": "uri=/data/finance.json;jpath=$.securities[*]"
+        "CommandText": "$.securities[*]"
       },
       "Fields": [
         { "Name": "ticker", "DataField": "ticker" },
@@ -28,7 +28,7 @@
       "Name": "PricesData",
       "Query": {
         "DataSourceName": "FinanceJSON",
-        "CommandText": "uri=/data/finance.json;jpath=$.prices[*]"
+        "CommandText": "$.prices[*]"
       },
       "Fields": [
         { "Name": "ticker", "DataField": "ticker" },
@@ -43,7 +43,7 @@
       "Name": "SummaryData",
       "Query": {
         "DataSourceName": "FinanceJSON",
-        "CommandText": "uri=/data/finance.json;jpath=$.summary[*]"
+        "CommandText": "$.summary[*]"
       },
       "Fields": [
         { "Name": "ticker", "DataField": "ticker" },
@@ -55,187 +55,583 @@
     }
   ],
   "Body": {
-    "Type": "section",
-    "Name": "Body",
+    "Height": "10in",
     "ReportItems": [
       {
         "Type": "textbox",
-        "Name": "IntroText",
-        "Value": "Introduzione ai titoli finanziari: i titoli rappresentano quote di proprietà o debito emesse da società o enti. Gli investitori acquistano azioni per partecipare alla crescita e ai dividendi, oppure obbligazioni per ottenere interessi e protezione del capitale. I mercati finanziari consentono la negoziazione continua, con prezzi influenzati da utili, tassi d’interesse, inflazione e aspettative future.",
-        "Style": { "FontSize": "12pt", "PaddingLeft": "0.2in", "PaddingRight": "0.2in", "LineHeight": "1.4" },
-        "Width": "8in",
-        "Height": "2.0in"
+        "Name": "TitlePage1",
+        "Value": "REPORT TITOLI FINANZIARI",
+        "Top": "0.5in",
+        "Left": "0.5in",
+        "Width": "7.5in",
+        "Height": "0.5in",
+        "Style": {
+          "FontSize": "24pt",
+          "FontWeight": "Bold",
+          "TextAlign": "Center",
+          "Color": "#1a365d"
+        }
       },
       {
-        "Type": "chart",
-        "Name": "PricesCandleChart",
-        "DataSetName": "PricesData",
-        "ChartType": "Candlestick",
-        "Top": "2.2in",
-        "Left": "0.0in",
-        "CategoryGroup": {
-          "Name": "MonthCategory",
-          "GroupExpressions": ["=Fields!month.Value"]
-        },
-        "Series": [
-          { "Name": "AAPL", "Open": "=Fields!open.Value", "High": "=Fields!high.Value", "Low": "=Fields!low.Value", "Close": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "AAPL" }] },
-          { "Name": "MSFT", "Open": "=Fields!open.Value", "High": "=Fields!high.Value", "Low": "=Fields!low.Value", "Close": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "MSFT" }] },
-          { "Name": "TSLA", "Open": "=Fields!open.Value", "High": "=Fields!high.Value", "Low": "=Fields!low.Value", "Close": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "TSLA" }] }
-        ],
-        "Legend": { "Visible": true },
-        "Width": "8in",
-        "Height": "3.5in"
+        "Type": "textbox",
+        "Name": "IntroText",
+        "Value": "Introduzione ai titoli finanziari: i titoli rappresentano quote di proprietà o debito emesse da società o enti. Gli investitori acquistano azioni per partecipare alla crescita e ai dividendi, oppure obbligazioni per ottenere interessi e protezione del capitale. I mercati finanziari consentono la negoziazione continua, con prezzi influenzati da utili, tassi d'interesse, inflazione e aspettative future.",
+        "Top": "1.2in",
+        "Left": "0.5in",
+        "Width": "7.5in",
+        "Height": "0.8in",
+        "Style": {
+          "FontSize": "11pt",
+          "TextAlign": "Justify",
+          "PaddingBottom": "0.2in"
+        }
       },
       {
         "Type": "table",
-        "Name": "SecuritiesDetailsTable",
+        "Name": "SecuritiesTable",
         "DataSetName": "SecuritiesData",
-        "Style": { "FontSize": "10pt", "PaddingLeft": "0.2in", "PaddingRight": "0.2in" },
-        "Top": "5.9in",
-        "Left": "0.0in",
-        "Width": "8in",
-        "Height": "2.5in",
-        "Columns": [
-          { "Width": "1.0in" },
+        "Top": "2.2in",
+        "Left": "0.5in",
+        "Width": "7.5in",
+        "TableColumns": [
+          { "Width": "1in" },
           { "Width": "2.2in" },
           { "Width": "1.3in" },
-          { "Width": "3.5in" }
+          { "Width": "3in" }
         ],
         "Header": {
-          "Cells": [
-            { "Value": "Ticker", "Style": { "FontWeight": "bold" } },
-            { "Value": "Nome", "Style": { "FontWeight": "bold" } },
-            { "Value": "Settore", "Style": { "FontWeight": "bold" } },
-            { "Value": "Descrizione", "Style": { "FontWeight": "bold" } }
+          "TableRows": [
+            {
+              "Height": "0.35in",
+              "TableCells": [
+                {
+                  "Item": {
+                    "Type": "textbox",
+                    "Value": "Ticker",
+                    "Style": {
+                      "FontWeight": "Bold",
+                      "BackgroundColor": "#2c5282",
+                      "Color": "White",
+                      "TextAlign": "Center",
+                      "VerticalAlign": "Middle",
+                      "FontSize": "11pt"
+                    }
+                  }
+                },
+                {
+                  "Item": {
+                    "Type": "textbox",
+                    "Value": "Nome Società",
+                    "Style": {
+                      "FontWeight": "Bold",
+                      "BackgroundColor": "#2c5282",
+                      "Color": "White",
+                      "TextAlign": "Center",
+                      "VerticalAlign": "Middle",
+                      "FontSize": "11pt"
+                    }
+                  }
+                },
+                {
+                  "Item": {
+                    "Type": "textbox",
+                    "Value": "Settore",
+                    "Style": {
+                      "FontWeight": "Bold",
+                      "BackgroundColor": "#2c5282",
+                      "Color": "White",
+                      "TextAlign": "Center",
+                      "VerticalAlign": "Middle",
+                      "FontSize": "11pt"
+                    }
+                  }
+                },
+                {
+                  "Item": {
+                    "Type": "textbox",
+                    "Value": "Descrizione",
+                    "Style": {
+                      "FontWeight": "Bold",
+                      "BackgroundColor": "#2c5282",
+                      "Color": "White",
+                      "TextAlign": "Center",
+                      "VerticalAlign": "Middle",
+                      "FontSize": "11pt"
+                    }
+                  }
+                }
+              ]
+            }
           ]
         },
         "Details": {
-          "Cells": [
-            { "Value": "=Fields!ticker.Value" },
-            { "Value": "=Fields!name.Value" },
-            { "Value": "=Fields!sector.Value" },
-            { "Value": "=Fields!description.Value" }
+          "TableRows": [
+            {
+              "Height": "0.6in",
+              "TableCells": [
+                {
+                  "Item": {
+                    "Type": "textbox",
+                    "Value": "=Fields!ticker.Value",
+                    "Style": {
+                      "FontWeight": "Bold",
+                      "TextAlign": "Center",
+                      "VerticalAlign": "Middle",
+                      "BackgroundColor": "=iif(RowNumber(\"SecuritiesData\") Mod 2 = 0, \"#f7fafc\", \"White\")",
+                      "BorderStyle": "Solid",
+                      "BorderWidth": "1pt",
+                      "BorderColor": "#e2e8f0"
+                    }
+                  }
+                },
+                {
+                  "Item": {
+                    "Type": "textbox",
+                    "Value": "=Fields!name.Value",
+                    "Style": {
+                      "TextAlign": "Left",
+                      "VerticalAlign": "Middle",
+                      "PaddingLeft": "0.1in",
+                      "BackgroundColor": "=iif(RowNumber(\"SecuritiesData\") Mod 2 = 0, \"#f7fafc\", \"White\")",
+                      "BorderStyle": "Solid",
+                      "BorderWidth": "1pt",
+                      "BorderColor": "#e2e8f0"
+                    }
+                  }
+                },
+                {
+                  "Item": {
+                    "Type": "textbox",
+                    "Value": "=Fields!sector.Value",
+                    "Style": {
+                      "TextAlign": "Center",
+                      "VerticalAlign": "Middle",
+                      "BackgroundColor": "=iif(RowNumber(\"SecuritiesData\") Mod 2 = 0, \"#f7fafc\", \"White\")",
+                      "BorderStyle": "Solid",
+                      "BorderWidth": "1pt",
+                      "BorderColor": "#e2e8f0"
+                    }
+                  }
+                },
+                {
+                  "Item": {
+                    "Type": "textbox",
+                    "Value": "=Fields!description.Value",
+                    "CanGrow": true,
+                    "Style": {
+                      "TextAlign": "Justify",
+                      "VerticalAlign": "Top",
+                      "PaddingLeft": "0.1in",
+                      "PaddingRight": "0.1in",
+                      "PaddingTop": "0.05in",
+                      "FontSize": "9pt",
+                      "BackgroundColor": "=iif(RowNumber(\"SecuritiesData\") Mod 2 = 0, \"#f7fafc\", \"White\")",
+                      "BorderStyle": "Solid",
+                      "BorderWidth": "1pt",
+                      "BorderColor": "#e2e8f0"
+                    }
+                  }
+                }
+              ]
+            }
           ]
         }
       },
       {
         "Type": "textbox",
-        "Name": "ChartsFooterBreak",
+        "Name": "PageBreak1",
         "Value": "",
+        "Top": "5in",
+        "Left": "0in",
+        "Width": "0.1in",
         "Height": "0.1in",
-        "PageBreakAtEnd": true
-      },
-      {
-        "Type": "chart",
-        "Name": "PieAvgCloseByTicker",
-        "DataSetName": "SummaryData",
-        "ChartType": "Pie",
-        "CategoryGroup": {
-          "Name": "TickerCategory",
-          "GroupExpressions": ["=Fields!ticker.Value"]
-        },
-        "Series": [
-          { "Name": "AvgClose", "Value": "=Fields!avgClose.Value" }
-        ],
-        "Legend": { "Visible": true },
-        "Width": "3.9in",
-        "Height": "3.5in",
-        "Top": "0.0in",
-        "Left": "0.0in"
-      },
-      {
-        "Type": "chart",
-        "Name": "StackedColumnByMonth",
-        "DataSetName": "PricesData",
-        "ChartType": "StackedColumn",
-        "CategoryGroup": {
-          "Name": "MonthCategory",
-          "GroupExpressions": ["=Fields!month.Value"]
-        },
-        "Series": [
-          { "Name": "AAPL", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "AAPL" }] },
-          { "Name": "MSFT", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "MSFT" }] },
-          { "Name": "TSLA", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "TSLA" }] }
-        ],
-        "Legend": { "Visible": true },
-        "Width": "3.9in",
-        "Height": "3.5in",
-        "Top": "0.0in",
-        "Left": "4.0in"
-      },
-      {
-        "Type": "chart",
-        "Name": "StackedBarByMonth",
-        "DataSetName": "PricesData",
-        "ChartType": "StackedBar",
-        "CategoryGroup": {
-          "Name": "MonthCategory",
-          "GroupExpressions": ["=Fields!month.Value"]
-        },
-        "Series": [
-          { "Name": "AAPL", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "AAPL" }] },
-          { "Name": "MSFT", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "MSFT" }] },
-          { "Name": "TSLA", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "TSLA" }] }
-        ],
-        "Legend": { "Visible": true },
-        "Width": "3.9in",
-        "Height": "3.5in",
-        "Top": "3.7in",
-        "Left": "0.0in"
-      },
-      {
-        "Type": "chart",
-        "Name": "BarAvgCloseByTicker",
-        "DataSetName": "SummaryData",
-        "ChartType": "Bar",
-        "CategoryGroup": {
-          "Name": "TickerCategory",
-          "GroupExpressions": ["=Fields!ticker.Value"]
-        },
-        "Series": [
-          { "Name": "AvgClose", "Value": "=Fields!avgClose.Value" }
-        ],
-        "Legend": { "Visible": true },
-        "Width": "3.9in",
-        "Height": "3.5in",
-        "Top": "3.7in",
-        "Left": "4.0in"
+        "PageBreak": "After"
       },
       {
         "Type": "textbox",
-        "Name": "PageBreakAfterCharts",
+        "Name": "TitlePage2",
+        "Value": "ANALISI GRAFICHE",
+        "Top": "5.2in",
+        "Left": "0.5in",
+        "Width": "7.5in",
+        "Height": "0.4in",
+        "Style": {
+          "FontSize": "20pt",
+          "FontWeight": "Bold",
+          "TextAlign": "Center",
+          "Color": "#1a365d"
+        }
+      },
+      {
+        "Type": "chart",
+        "Name": "PieChart",
+        "DataSetName": "SummaryData",
+        "Top": "5.8in",
+        "Left": "0.5in",
+        "Width": "3.5in",
+        "Height": "2.5in",
+        "ChartAreas": [
+          {
+            "Name": "chartArea1"
+          }
+        ],
+        "Title": {
+          "Caption": "Distribuzione Valore Medio per Titolo"
+        },
+        "ChartSeriesCollection": [
+          {
+            "Name": "Series1",
+            "Type": "Pie",
+            "ChartArea": "chartArea1",
+            "ValueMemberX": "=Fields!ticker.Value",
+            "ValueMemberY": "=Fields!avgClose.Value",
+            "DataLabel": {
+              "Visible": true,
+              "Value": "=Fields!ticker.Value & \": \" & FormatCurrency(Fields!avgClose.Value)"
+            }
+          }
+        ],
+        "Legend": {
+          "Visible": true,
+          "Position": "Bottom"
+        }
+      },
+      {
+        "Type": "chart",
+        "Name": "BarChart",
+        "DataSetName": "SummaryData",
+        "Top": "5.8in",
+        "Left": "4.2in",
+        "Width": "3.8in",
+        "Height": "2.5in",
+        "ChartAreas": [
+          {
+            "Name": "chartArea1",
+            "Axes": {
+              "X": {
+                "Title": {
+                  "Caption": "Titolo"
+                }
+              },
+              "Y": {
+                "Title": {
+                  "Caption": "Valore ($)"
+                }
+              }
+            }
+          }
+        ],
+        "Title": {
+          "Caption": "Min, Media e Max per Titolo"
+        },
+        "ChartSeriesCollection": [
+          {
+            "Name": "MinSeries",
+            "Type": "Column",
+            "ChartArea": "chartArea1",
+            "ValueMemberX": "=Fields!ticker.Value",
+            "ValueMemberY": "=Fields!minClose.Value",
+            "LegendText": "Minimo"
+          },
+          {
+            "Name": "AvgSeries",
+            "Type": "Column",
+            "ChartArea": "chartArea1",
+            "ValueMemberX": "=Fields!ticker.Value",
+            "ValueMemberY": "=Fields!avgClose.Value",
+            "LegendText": "Media"
+          },
+          {
+            "Name": "MaxSeries",
+            "Type": "Column",
+            "ChartArea": "chartArea1",
+            "ValueMemberX": "=Fields!ticker.Value",
+            "ValueMemberY": "=Fields!maxClose.Value",
+            "LegendText": "Massimo"
+          }
+        ],
+        "Legend": {
+          "Visible": true,
+          "Position": "Bottom"
+        }
+      },
+      {
+        "Type": "chart",
+        "Name": "StackedChart",
+        "DataSetName": "PricesData",
+        "Top": "8.5in",
+        "Left": "0.5in",
+        "Width": "7.5in",
+        "Height": "2.8in",
+        "ChartAreas": [
+          {
+            "Name": "chartArea1",
+            "Axes": {
+              "X": {
+                "Title": {
+                  "Caption": "Mese"
+                }
+              },
+              "Y": {
+                "Title": {
+                  "Caption": "Prezzo ($)"
+                }
+              }
+            }
+          }
+        ],
+        "Title": {
+          "Caption": "Evoluzione Prezzi di Chiusura"
+        },
+        "ChartSeriesCollection": [
+          {
+            "Name": "Series1",
+            "Type": "StackedColumn",
+            "ChartArea": "chartArea1",
+            "ValueMemberX": "=Fields!month.Value",
+            "ValueMemberY": "=Fields!close.Value",
+            "SeriesGrouping": "=Fields!ticker.Value"
+          }
+        ],
+        "Legend": {
+          "Visible": true,
+          "Position": "Bottom"
+        }
+      },
+      {
+        "Type": "textbox",
+        "Name": "PageBreak2",
         "Value": "",
+        "Top": "11.5in",
+        "Left": "0in",
+        "Width": "0.1in",
         "Height": "0.1in",
-        "PageBreakAtEnd": true
+        "PageBreak": "After"
+      },
+      {
+        "Type": "textbox",
+        "Name": "TitlePage3",
+        "Value": "DETTAGLIO ANDAMENTO PER TITOLO",
+        "Top": "11.7in",
+        "Left": "0.5in",
+        "Width": "7.5in",
+        "Height": "0.4in",
+        "Style": {
+          "FontSize": "20pt",
+          "FontWeight": "Bold",
+          "TextAlign": "Center",
+          "Color": "#1a365d"
+        }
       },
       {
         "Type": "table",
-        "Name": "SummaryTable",
-        "DataSetName": "SummaryData",
-        "Style": { "FontSize": "10pt" },
-        "Width": "8in",
-        "Height": "1.5in",
-        "Columns": [
-          { "Width": "1.5in" },
-          { "Width": "2in" },
-          { "Width": "2in" },
-          { "Width": "2in" }
+        "Name": "DetailTable",
+        "DataSetName": "SecuritiesData",
+        "Top": "12.3in",
+        "Left": "0.5in",
+        "Width": "7.5in",
+        "TableColumns": [
+          { "Width": "7.5in" }
         ],
         "Header": {
-          "Cells": [
-            { "Value": "Ticker", "Style": { "FontWeight": "bold" } },
-            { "Value": "Prezzo medio", "Style": { "FontWeight": "bold" } },
-            { "Value": "Min", "Style": { "FontWeight": "bold" } },
-            { "Value": "Max", "Style": { "FontWeight": "bold" } }
+          "TableRows": [
+            {
+              "Height": "0.35in",
+              "TableCells": [
+                {
+                  "Item": {
+                    "Type": "textbox",
+                    "Value": "Andamento Mensile",
+                    "Style": {
+                      "FontWeight": "Bold",
+                      "BackgroundColor": "#2c5282",
+                      "Color": "White",
+                      "TextAlign": "Center",
+                      "VerticalAlign": "Middle",
+                      "FontSize": "12pt"
+                    }
+                  }
+                }
+              ]
+            }
           ]
         },
         "Details": {
-          "Cells": [
-            { "Value": "=Fields!ticker.Value" },
-            { "Value": "=Fields!avgClose.Value" },
-            { "Value": "=Fields!minClose.Value" },
-            { "Value": "=Fields!maxClose.Value" }
+          "TableRows": [
+            {
+              "Height": "3.2in",
+              "TableCells": [
+                {
+                  "Item": {
+                    "Type": "container",
+                    "ReportItems": [
+                      {
+                        "Type": "textbox",
+                        "Name": "TickerTitle",
+                        "Value": "=Fields!ticker.Value & \" - \" & Fields!name.Value",
+                        "Top": "0.1in",
+                        "Left": "0.1in",
+                        "Width": "7.3in",
+                        "Height": "0.3in",
+                        "Style": {
+                          "FontSize": "14pt",
+                          "FontWeight": "Bold",
+                          "Color": "#2c5282"
+                        }
+                      },
+                      {
+                        "Type": "chart",
+                        "Name": "LineChart",
+                        "DataSetName": "PricesData",
+                        "Top": "0.5in",
+                        "Left": "0.1in",
+                        "Width": "7.3in",
+                        "Height": "2.5in",
+                        "Filters": [
+                          {
+                            "FilterExpression": "=Fields!ticker.Value",
+                            "Operator": "Equal",
+                            "FilterValues": [
+                              "=ReportItems!TickerTitle.Value.Split(\" \")(0)"
+                            ]
+                          }
+                        ],
+                        "ChartAreas": [
+                          {
+                            "Name": "chartArea1",
+                            "Axes": {
+                              "X": {
+                                "Title": {
+                                  "Caption": "Mese"
+                                }
+                              },
+                              "Y": {
+                                "Title": {
+                                  "Caption": "Prezzo ($)"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "ChartSeriesCollection": [
+                          {
+                            "Name": "OpenSeries",
+                            "Type": "Line",
+                            "ChartArea": "chartArea1",
+                            "ValueMemberX": "=Fields!month.Value",
+                            "ValueMemberY": "=Fields!open.Value",
+                            "LegendText": "Apertura",
+                            "MarkerStyle": "Circle"
+                          },
+                          {
+                            "Name": "CloseSeries",
+                            "Type": "Line",
+                            "ChartArea": "chartArea1",
+                            "ValueMemberX": "=Fields!month.Value",
+                            "ValueMemberY": "=Fields!close.Value",
+                            "LegendText": "Chiusura",
+                            "MarkerStyle": "Square"
+                          },
+                          {
+                            "Name": "HighSeries",
+                            "Type": "Line",
+                            "ChartArea": "chartArea1",
+                            "ValueMemberX": "=Fields!month.Value",
+                            "ValueMemberY": "=Fields!high.Value",
+                            "LegendText": "Massimo",
+                            "MarkerStyle": "Triangle",
+                            "BorderDashStyle": "Dash"
+                          },
+                          {
+                            "Name": "LowSeries",
+                            "Type": "Line",
+                            "ChartArea": "chartArea1",
+                            "ValueMemberX": "=Fields!month.Value",
+                            "ValueMemberY": "=Fields!low.Value",
+                            "LegendText": "Minimo",
+                            "MarkerStyle": "Diamond",
+                            "BorderDashStyle": "Dash"
+                          }
+                        ],
+                        "Legend": {
+                          "Visible": true,
+                          "Position": "Bottom"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
           ]
+        }
+      }
+    ]
+  },
+  "Page": {
+    "PageWidth": "8.5in",
+    "PageHeight": "11in",
+    "LeftMargin": "0.5in",
+    "RightMargin": "0.5in",
+    "TopMargin": "0.5in",
+    "BottomMargin": "0.5in"
+  },
+  "PageHeader": {
+    "Height": "0.5in",
+    "ReportItems": [
+      {
+        "Type": "textbox",
+        "Name": "HeaderText",
+        "Value": "Report Finanziario - Analisi Titoli",
+        "Top": "0.1in",
+        "Left": "0in",
+        "Width": "5in",
+        "Height": "0.3in",
+        "Style": {
+          "FontSize": "10pt",
+          "Color": "#4a5568"
+        }
+      },
+      {
+        "Type": "textbox",
+        "Name": "PageNumber",
+        "Value": "=\"Pagina \" & Globals!PageNumber & \" di \" & Globals!TotalPages",
+        "Top": "0.1in",
+        "Left": "5.5in",
+        "Width": "2in",
+        "Height": "0.3in",
+        "Style": {
+          "FontSize": "10pt",
+          "TextAlign": "Right",
+          "Color": "#4a5568"
+        }
+      }
+    ]
+  },
+  "PageFooter": {
+    "Height": "0.4in",
+    "ReportItems": [
+      {
+        "Type": "textbox",
+        "Name": "FooterText",
+        "Value": "=\"Generato il: \" & Now().ToString(\"dd/MM/yyyy HH:mm\")",
+        "Top": "0.1in",
+        "Left": "0in",
+        "Width": "7.5in",
+        "Height": "0.25in",
+        "Style": {
+          "FontSize": "8pt",
+          "TextAlign": "Center",
+          "Color": "#718096",
+          "BorderStyle": {
+            "Top": "Solid"
+          },
+          "BorderWidth": {
+            "Top": "1pt"
+          },
+          "BorderColor": {
+            "Top": "#cbd5e0"
+          }
         }
       }
     ]
