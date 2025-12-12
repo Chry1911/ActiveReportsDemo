@@ -6,7 +6,7 @@
       "Name": "FinanceJSON",
       "ConnectionProperties": {
         "DataProvider": "JSON",
-        "ConnectString": "endpoint=/data/finance.json"
+        "ConnectString": "endpoint="
       }
     }
   ],
@@ -15,22 +15,43 @@
       "Name": "SecuritiesData",
       "Query": {
         "DataSourceName": "FinanceJSON",
-        "CommandText": "jpath=$.securities[*]"
-      }
+        "CommandText": "uri=/data/finance.json;jpath=$.securities[*]"
+      },
+      "Fields": [
+        { "Name": "ticker", "DataField": "ticker" },
+        { "Name": "name", "DataField": "name" },
+        { "Name": "sector", "DataField": "sector" },
+        { "Name": "description", "DataField": "description" }
+      ]
     },
     {
       "Name": "PricesData",
       "Query": {
         "DataSourceName": "FinanceJSON",
-        "CommandText": "jpath=$.prices[*]"
-      }
+        "CommandText": "uri=/data/finance.json;jpath=$.prices[*]"
+      },
+      "Fields": [
+        { "Name": "ticker", "DataField": "ticker" },
+        { "Name": "month", "DataField": "month" },
+        { "Name": "open", "DataField": "open" },
+        { "Name": "high", "DataField": "high" },
+        { "Name": "low", "DataField": "low" },
+        { "Name": "close", "DataField": "close" }
+      ]
     },
     {
       "Name": "SummaryData",
       "Query": {
         "DataSourceName": "FinanceJSON",
-        "CommandText": "jpath=$.summary[*]"
-      }
+        "CommandText": "uri=/data/finance.json;jpath=$.summary[*]"
+      },
+      "Fields": [
+        { "Name": "ticker", "DataField": "ticker" },
+        { "Name": "avgClose", "DataField": "avgClose" },
+        { "Name": "minClose", "DataField": "minClose" },
+        { "Name": "maxClose", "DataField": "maxClose" },
+        { "Name": "lastMonth", "DataField": "lastMonth" }
+      ]
     }
   ],
   "Body": {
@@ -43,30 +64,146 @@
         "Value": "Introduzione ai titoli finanziari: i titoli rappresentano quote di proprietà o debito emesse da società o enti. Gli investitori acquistano azioni per partecipare alla crescita e ai dividendi, oppure obbligazioni per ottenere interessi e protezione del capitale. I mercati finanziari consentono la negoziazione continua, con prezzi influenzati da utili, tassi d’interesse, inflazione e aspettative future.",
         "Style": { "FontSize": "12pt", "PaddingLeft": "0.2in", "PaddingRight": "0.2in", "LineHeight": "1.4" },
         "Width": "8in",
-        "Height": "2.5in",
-        "PageBreakAtEnd": true
+        "Height": "2.0in"
       },
       {
         "Type": "chart",
         "Name": "PricesCandleChart",
         "DataSetName": "PricesData",
         "ChartType": "Candlestick",
+        "Top": "2.2in",
+        "Left": "0.0in",
         "CategoryGroup": {
           "Name": "MonthCategory",
-          "GroupExpressions": ["=Fields.month"]
+          "GroupExpressions": ["=Fields!month.Value"]
         },
         "Series": [
-          { "Name": "AAPL", "Open": "=Fields.open", "High": "=Fields.high", "Low": "=Fields.low", "Close": "=Fields.close", "Filters": [{ "Operator": "Equal", "Expression": "=Fields.ticker", "Value": "AAPL" }] },
-          { "Name": "MSFT", "Open": "=Fields.open", "High": "=Fields.high", "Low": "=Fields.low", "Close": "=Fields.close", "Filters": [{ "Operator": "Equal", "Expression": "=Fields.ticker", "Value": "MSFT" }] },
-          { "Name": "TSLA", "Open": "=Fields.open", "High": "=Fields.high", "Low": "=Fields.low", "Close": "=Fields.close", "Filters": [{ "Operator": "Equal", "Expression": "=Fields.ticker", "Value": "TSLA" }] }
+          { "Name": "AAPL", "Open": "=Fields!open.Value", "High": "=Fields!high.Value", "Low": "=Fields!low.Value", "Close": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "AAPL" }] },
+          { "Name": "MSFT", "Open": "=Fields!open.Value", "High": "=Fields!high.Value", "Low": "=Fields!low.Value", "Close": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "MSFT" }] },
+          { "Name": "TSLA", "Open": "=Fields!open.Value", "High": "=Fields!high.Value", "Low": "=Fields!low.Value", "Close": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "TSLA" }] }
         ],
         "Legend": { "Visible": true },
         "Width": "8in",
         "Height": "3.5in"
       },
       {
+        "Type": "table",
+        "Name": "SecuritiesDetailsTable",
+        "DataSetName": "SecuritiesData",
+        "Style": { "FontSize": "10pt", "PaddingLeft": "0.2in", "PaddingRight": "0.2in" },
+        "Top": "5.9in",
+        "Left": "0.0in",
+        "Width": "8in",
+        "Height": "2.5in",
+        "Columns": [
+          { "Width": "1.0in" },
+          { "Width": "2.2in" },
+          { "Width": "1.3in" },
+          { "Width": "3.5in" }
+        ],
+        "Header": {
+          "Cells": [
+            { "Value": "Ticker", "Style": { "FontWeight": "bold" } },
+            { "Value": "Nome", "Style": { "FontWeight": "bold" } },
+            { "Value": "Settore", "Style": { "FontWeight": "bold" } },
+            { "Value": "Descrizione", "Style": { "FontWeight": "bold" } }
+          ]
+        },
+        "Details": {
+          "Cells": [
+            { "Value": "=Fields!ticker.Value" },
+            { "Value": "=Fields!name.Value" },
+            { "Value": "=Fields!sector.Value" },
+            { "Value": "=Fields!description.Value" }
+          ]
+        }
+      },
+      {
         "Type": "textbox",
         "Name": "ChartsFooterBreak",
+        "Value": "",
+        "Height": "0.1in",
+        "PageBreakAtEnd": true
+      },
+      {
+        "Type": "chart",
+        "Name": "PieAvgCloseByTicker",
+        "DataSetName": "SummaryData",
+        "ChartType": "Pie",
+        "CategoryGroup": {
+          "Name": "TickerCategory",
+          "GroupExpressions": ["=Fields!ticker.Value"]
+        },
+        "Series": [
+          { "Name": "AvgClose", "Value": "=Fields!avgClose.Value" }
+        ],
+        "Legend": { "Visible": true },
+        "Width": "3.9in",
+        "Height": "3.5in",
+        "Top": "0.0in",
+        "Left": "0.0in"
+      },
+      {
+        "Type": "chart",
+        "Name": "StackedColumnByMonth",
+        "DataSetName": "PricesData",
+        "ChartType": "StackedColumn",
+        "CategoryGroup": {
+          "Name": "MonthCategory",
+          "GroupExpressions": ["=Fields!month.Value"]
+        },
+        "Series": [
+          { "Name": "AAPL", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "AAPL" }] },
+          { "Name": "MSFT", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "MSFT" }] },
+          { "Name": "TSLA", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "TSLA" }] }
+        ],
+        "Legend": { "Visible": true },
+        "Width": "3.9in",
+        "Height": "3.5in",
+        "Top": "0.0in",
+        "Left": "4.0in"
+      },
+      {
+        "Type": "chart",
+        "Name": "StackedBarByMonth",
+        "DataSetName": "PricesData",
+        "ChartType": "StackedBar",
+        "CategoryGroup": {
+          "Name": "MonthCategory",
+          "GroupExpressions": ["=Fields!month.Value"]
+        },
+        "Series": [
+          { "Name": "AAPL", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "AAPL" }] },
+          { "Name": "MSFT", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "MSFT" }] },
+          { "Name": "TSLA", "Value": "=Fields!close.Value", "Filters": [{ "Operator": "Equal", "Expression": "=Fields!ticker.Value", "Value": "TSLA" }] }
+        ],
+        "Legend": { "Visible": true },
+        "Width": "3.9in",
+        "Height": "3.5in",
+        "Top": "3.7in",
+        "Left": "0.0in"
+      },
+      {
+        "Type": "chart",
+        "Name": "BarAvgCloseByTicker",
+        "DataSetName": "SummaryData",
+        "ChartType": "Bar",
+        "CategoryGroup": {
+          "Name": "TickerCategory",
+          "GroupExpressions": ["=Fields!ticker.Value"]
+        },
+        "Series": [
+          { "Name": "AvgClose", "Value": "=Fields!avgClose.Value" }
+        ],
+        "Legend": { "Visible": true },
+        "Width": "3.9in",
+        "Height": "3.5in",
+        "Top": "3.7in",
+        "Left": "4.0in"
+      },
+      {
+        "Type": "textbox",
+        "Name": "PageBreakAfterCharts",
         "Value": "",
         "Height": "0.1in",
         "PageBreakAtEnd": true
@@ -94,10 +231,10 @@
         },
         "Details": {
           "Cells": [
-            { "Value": "=Fields.ticker" },
-            { "Value": "=Fields.avgClose" },
-            { "Value": "=Fields.minClose" },
-            { "Value": "=Fields.maxClose" }
+            { "Value": "=Fields!ticker.Value" },
+            { "Value": "=Fields!avgClose.Value" },
+            { "Value": "=Fields!minClose.Value" },
+            { "Value": "=Fields!maxClose.Value" }
           ]
         }
       }
