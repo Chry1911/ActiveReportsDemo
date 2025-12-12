@@ -23,9 +23,18 @@ export default function RootLayout({
   return (
     <html lang="it">
       <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@grapecity/activereports@5.2.6/styles/ar-js-ui.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@grapecity/activereports@5.2.6/styles/ar-js-viewer.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@grapecity/activereports@5.2.6/styles/ar-js-designer.css" />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/@grapecity/activereports@5.2.6/styles/ar-js-ui.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/@grapecity/activereports@5.2.6/styles/ar-js-designer.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/@grapecity/activereports@5.2.6/styles/ar-js-viewer.css"
+        />
       </head>
       <body className={`antialiased`}>{children}</body>
     </html>

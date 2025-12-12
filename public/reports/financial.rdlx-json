@@ -1,0 +1,106 @@
+{
+  "Type": "report",
+  "Name": "FinancialReport",
+  "DataSources": [
+    {
+      "Name": "FinanceJSON",
+      "ConnectionProperties": {
+        "DataProvider": "JSON",
+        "ConnectString": "endpoint=/data/finance.json"
+      }
+    }
+  ],
+  "DataSets": [
+    {
+      "Name": "SecuritiesData",
+      "Query": {
+        "DataSourceName": "FinanceJSON",
+        "CommandText": "jpath=$.securities[*]"
+      }
+    },
+    {
+      "Name": "PricesData",
+      "Query": {
+        "DataSourceName": "FinanceJSON",
+        "CommandText": "jpath=$.prices[*]"
+      }
+    },
+    {
+      "Name": "SummaryData",
+      "Query": {
+        "DataSourceName": "FinanceJSON",
+        "CommandText": "jpath=$.summary[*]"
+      }
+    }
+  ],
+  "Body": {
+    "Type": "section",
+    "Name": "Body",
+    "ReportItems": [
+      {
+        "Type": "textbox",
+        "Name": "IntroText",
+        "Value": "Introduzione ai titoli finanziari: i titoli rappresentano quote di proprietà o debito emesse da società o enti. Gli investitori acquistano azioni per partecipare alla crescita e ai dividendi, oppure obbligazioni per ottenere interessi e protezione del capitale. I mercati finanziari consentono la negoziazione continua, con prezzi influenzati da utili, tassi d’interesse, inflazione e aspettative future.",
+        "Style": { "FontSize": "12pt", "PaddingLeft": "0.2in", "PaddingRight": "0.2in", "LineHeight": "1.4" },
+        "Width": "8in",
+        "Height": "2.5in",
+        "PageBreakAtEnd": true
+      },
+      {
+        "Type": "chart",
+        "Name": "PricesCandleChart",
+        "DataSetName": "PricesData",
+        "ChartType": "Candlestick",
+        "CategoryGroup": {
+          "Name": "MonthCategory",
+          "GroupExpressions": ["=Fields.month"]
+        },
+        "Series": [
+          { "Name": "AAPL", "Open": "=Fields.open", "High": "=Fields.high", "Low": "=Fields.low", "Close": "=Fields.close", "Filters": [{ "Operator": "Equal", "Expression": "=Fields.ticker", "Value": "AAPL" }] },
+          { "Name": "MSFT", "Open": "=Fields.open", "High": "=Fields.high", "Low": "=Fields.low", "Close": "=Fields.close", "Filters": [{ "Operator": "Equal", "Expression": "=Fields.ticker", "Value": "MSFT" }] },
+          { "Name": "TSLA", "Open": "=Fields.open", "High": "=Fields.high", "Low": "=Fields.low", "Close": "=Fields.close", "Filters": [{ "Operator": "Equal", "Expression": "=Fields.ticker", "Value": "TSLA" }] }
+        ],
+        "Legend": { "Visible": true },
+        "Width": "8in",
+        "Height": "3.5in"
+      },
+      {
+        "Type": "textbox",
+        "Name": "ChartsFooterBreak",
+        "Value": "",
+        "Height": "0.1in",
+        "PageBreakAtEnd": true
+      },
+      {
+        "Type": "table",
+        "Name": "SummaryTable",
+        "DataSetName": "SummaryData",
+        "Style": { "FontSize": "10pt" },
+        "Width": "8in",
+        "Height": "1.5in",
+        "Columns": [
+          { "Width": "1.5in" },
+          { "Width": "2in" },
+          { "Width": "2in" },
+          { "Width": "2in" }
+        ],
+        "Header": {
+          "Cells": [
+            { "Value": "Ticker", "Style": { "FontWeight": "bold" } },
+            { "Value": "Prezzo medio", "Style": { "FontWeight": "bold" } },
+            { "Value": "Min", "Style": { "FontWeight": "bold" } },
+            { "Value": "Max", "Style": { "FontWeight": "bold" } }
+          ]
+        },
+        "Details": {
+          "Cells": [
+            { "Value": "=Fields.ticker" },
+            { "Value": "=Fields.avgClose" },
+            { "Value": "=Fields.minClose" },
+            { "Value": "=Fields.maxClose" }
+          ]
+        }
+      }
+    ]
+  }
+}

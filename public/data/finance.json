@@ -1,0 +1,67 @@
+{
+  "securities": [
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "sector": "Technology",
+      "description": "Titolo azionario di Apple Inc., leader nel settore tecnologico, noto per iPhone, Mac e servizi digitali."
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corp.",
+      "sector": "Technology",
+      "description": "Titolo azionario di Microsoft, gigante del software e del cloud, produttore di Windows, Azure e Office 365."
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla Inc.",
+      "sector": "Automotive",
+      "description": "Titolo azionario di Tesla, azienda leader nei veicoli elettrici e nelle soluzioni di energia pulita."
+    }
+  ],
+  "prices": [
+    { "ticker": "AAPL", "month": "2025-07", "open": 212.0, "high": 217.5, "low": 209.4, "close": 215.2 },
+    { "ticker": "AAPL", "month": "2025-08", "open": 218.9, "high": 224.6, "low": 216.2, "close": 222.1 },
+    { "ticker": "AAPL", "month": "2025-09", "open": 221.0, "high": 223.5, "low": 214.6, "close": 219.5 },
+    { "ticker": "AAPL", "month": "2025-10", "open": 220.3, "high": 231.4, "low": 219.8, "close": 228.4 },
+    { "ticker": "AAPL", "month": "2025-11", "open": 228.0, "high": 233.6, "low": 226.1, "close": 231.9 },
+    { "ticker": "AAPL", "month": "2025-12", "open": 232.2, "high": 236.8, "low": 230.4, "close": 235.7 },
+
+    { "ticker": "MSFT", "month": "2025-07", "open": 420.5, "high": 428.8, "low": 418.7, "close": 425.6 },
+    { "ticker": "MSFT", "month": "2025-08", "open": 426.0, "high": 434.9, "low": 423.1, "close": 432.2 },
+    { "ticker": "MSFT", "month": "2025-09", "open": 431.1, "high": 433.8, "low": 424.8, "close": 429.7 },
+    { "ticker": "MSFT", "month": "2025-10", "open": 430.3, "high": 440.3, "low": 429.0, "close": 438.9 },
+    { "ticker": "MSFT", "month": "2025-11", "open": 439.4, "high": 442.8, "low": 436.2, "close": 441.1 },
+    { "ticker": "MSFT", "month": "2025-12", "open": 442.0, "high": 449.6, "low": 440.1, "close": 447.3 },
+
+    { "ticker": "TSLA", "month": "2025-07", "open": 261.8, "high": 268.9, "low": 258.3, "close": 265.4 },
+    { "ticker": "TSLA", "month": "2025-08", "open": 266.0, "high": 273.5, "low": 263.2, "close": 271.0 },
+    { "ticker": "TSLA", "month": "2025-09", "open": 270.1, "high": 271.9, "low": 265.0, "close": 268.3 },
+    { "ticker": "TSLA", "month": "2025-10", "open": 268.5, "high": 282.4, "low": 267.1, "close": 279.6 },
+    { "ticker": "TSLA", "month": "2025-11", "open": 280.2, "high": 288.7, "low": 278.5, "close": 286.1 },
+    { "ticker": "TSLA", "month": "2025-12", "open": 287.0, "high": 295.8, "low": 285.3, "close": 292.5 }
+  ],
+  "summary": [
+    {
+      "ticker": "AAPL",
+      "avgClose": 225.8,
+      "minClose": 215.2,
+      "maxClose": 235.7,
+      "lastMonth": "2025-12"
+    },
+    {
+      "ticker": "MSFT",
+      "avgClose": 434.1,
+      "minClose": 425.6,
+      "maxClose": 447.3,
+      "lastMonth": "2025-12"
+    },
+    {
+      "ticker": "TSLA",
+      "avgClose": 277.2,
+      "minClose": 265.4,
+      "maxClose": 292.5,
+      "lastMonth": "2025-12"
+    }
+  ]
+}
