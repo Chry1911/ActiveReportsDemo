@@ -1,106 +1,454 @@
 {
-  "portfolios": [
+  "customerData": [
     {
-      "code": "PROVA01",
-      "name": "European Equity Core",
-      "currency": "EUR",
-      "group": "EQUITY",
-      "totalValue": 1543200,
-      "lastUpdate": "2025-04-10"
+        "clientName": "Rodriguez-Terrazas G.M. - 1.6783",
+        "portfolioNumber": "0001.6783.0201",
+        "bankName": "Bank Julius Baer & Co.",
+        "referenceCurrency": "USD",
+        "dateFrom": "31.12.2024",
+        "dateTo": "19.11.2025",
+        "totalValue": 4271391,
+        "initialAsset": 4501072,
+        "documentName" : "Asset Valuation of the Data Calculation",
+        "performance": {
+            "timeWeighted": 0.06718,
+            "moneyWeighted": 0.06512,
+            "differenceInValue": -229666,
+            "depositsWithdrawals": -499203,
+            "performanceAmount": 269537
+        }
+    }
+],
+  "monthlyPerformance": [
+    { "month": "Jan 2025", "monthCode": "2025-01", "performance": 0.0223 },
+    { "month": "Feb 2025", "monthCode": "2025-02", "performance": -0.0053 },
+    { "month": "Mar 2025", "monthCode": "2025-03", "performance": -0.0156 },
+    { "month": "Apr 2025", "monthCode": "2025-04", "performance": 0.0027 },
+    { "month": "May 2025", "monthCode": "2025-05", "performance": 0.0151 },
+    { "month": "Jun 2025", "monthCode": "2025-06", "performance": 0.0140 },
+    { "month": "Jul 2025", "monthCode": "2025-07", "performance": 0.0008 },
+    { "month": "Aug 2025", "monthCode": "2025-08", "performance": 0.0152 },
+    { "month": "Sep 2025", "monthCode": "2025-09", "performance": 0.0180 },
+    { "month": "Oct 2025", "monthCode": "2025-10", "performance": 0.0064 },
+    { "month": "Nov 2025", "monthCode": "2025-11", "performance": -0.0064 }
+  ],
+  "assetAllocation": [
+    { "category": "EQUITIES", "value": 1555467, "weight": 0.3642 },
+    { "category": "BONDS", "value": 1298949, "weight": 0.3041 },
+    { "category": "MONEY MARKET", "value": 538141, "weight": 0.1260 },
+    { "category": "ALTERNATIVE INVESTMENTS", "value": 369767, "weight": 0.0866 },
+    { "category": "LIQUIDITY", "value": 281818, "weight": 0.0660 },
+    { "category": "COMMODITIES", "value": 213302, "weight": 0.0499 },
+    { "category": "Other", "value": 13947, "weight": 0.0033 }
+  ],
+  "currencyAllocation": [
+    { "currency": "US DOLLAR", "value": 3868490, "weight": 0.9057 },
+    { "currency": "EURO", "value": 402563, "weight": 0.0942 },
+    { "currency": "BRITISH POUND", "value": 354, "weight": 0.0001 }
+  ],
+  "cashAccounts": [
+    {
+      "currency": "USD",
+      "accountNumber": "212033301",
+      "description": "C/C USD 212033301",
+      "value": 15807.71,
+      "plAmount": -61002.21,
+      "plPercent": -0.015204,
+      "portfolioPercent": 0.0037
     },
     {
-      "code": "PROVA02",
-      "name": "Global Bond Strategy",
       "currency": "EUR",
-      "group": "BOND",
-      "totalValue": 982450,
-      "lastUpdate": "2025-04-10"
+      "accountNumber": "212081402",
+      "description": "C/C EUR 212081402",
+      "valueUSD": 1136.69,
+      "valueCurrency": 985.17,
+      "fxRate": 1.1538,
+      "plFxAmount": -294.84,
+      "portfolioPercent": 0.0003
     },
     {
-      "code": "PROVA04",
-      "name": "Global Equity Value - Institutional EUR",
-      "currency": "EUR",
-      "group": "EQUITY",
-      "totalValue": 2410163,
-      "lastUpdate": "2025-04-10"
+      "currency": "GBP",
+      "accountNumber": "212040201",
+      "description": "C/C GBP 212040201",
+      "valueUSD": 354.07,
+      "valueCurrency": 271.13,
+      "fxRate": 1.3059,
+      "plFxAmount": 14.51,
+      "portfolioPercent": 0.0001
     }
   ],
-
-  "composition": [
-    { "code": "PROVA01", "date": "2024-12-31", "weight": 0.072, "weightExposed": 0.075, "value": 111100 },
-    { "code": "PROVA01", "date": "2025-01-31", "weight": 0.081, "weightExposed": 0.084, "value": 125400 },
-    { "code": "PROVA01", "date": "2025-02-28", "weight": 0.089, "weightExposed": 0.092, "value": 137300 },
-    { "code": "PROVA01", "date": "2025-03-31", "weight": 0.094, "weightExposed": 0.098, "value": 145200 },
-    { "code": "PROVA01", "date": "2025-04-10", "weight": 0.091, "weightExposed": 0.095, "value": 140600 },
-
-    { "code": "PROVA02", "date": "2024-12-31", "weight": 0.112, "weightExposed": 0.110, "value": 110000 },
-    { "code": "PROVA02", "date": "2025-01-31", "weight": 0.118, "weightExposed": 0.116, "value": 116500 },
-    { "code": "PROVA02", "date": "2025-02-28", "weight": 0.121, "weightExposed": 0.119, "value": 119800 },
-    { "code": "PROVA02", "date": "2025-03-31", "weight": 0.125, "weightExposed": 0.123, "value": 123900 },
-    { "code": "PROVA02", "date": "2025-04-10", "weight": 0.128, "weightExposed": 0.126, "value": 126400 },
-
-    { "code": "PROVA04", "date": "2024-12-31", "weight": 0.065, "weightExposed": 0.070, "value": 156800 },
-    { "code": "PROVA04", "date": "2025-01-31", "weight": 0.082, "weightExposed": 0.087, "value": 198500 },
-    { "code": "PROVA04", "date": "2025-02-28", "weight": 0.095, "weightExposed": 0.101, "value": 229800 },
-    { "code": "PROVA04", "date": "2025-03-31", "weight": 0.125, "weightExposed": 0.130, "value": 298000 },
-    { "code": "PROVA04", "date": "2025-04-10", "weight": 0.119, "weightExposed": 0.125, "value": 286400 }
-  ],
-
-  "summaryByPortfolio": [
+  "moneyMarket": [
     {
-      "code": "PROVA01",
-      "avgWeight": 0.085,
-      "minWeight": 0.072,
-      "maxWeight": 0.094,
-      "minValue": 111100,
-      "maxValue": 145200,
-      "lastDate": "2025-04-10"
-    },
-    {
-      "code": "PROVA02",
-      "avgWeight": 0.121,
-      "minWeight": 0.112,
-      "maxWeight": 0.128,
-      "minValue": 110000,
-      "maxValue": 126400,
-      "lastDate": "2025-04-10"
-    },
-    {
-      "code": "PROVA04",
-      "avgWeight": 0.097,
-      "minWeight": 0.065,
-      "maxWeight": 0.125,
-      "minValue": 156800,
-      "maxValue": 298000,
-      "lastDate": "2025-04-10"
+      "isin": "IE00BJXRT698",
+      "name": "SPDR BBG 1-3M US T-BILL USDA",
+      "quantity": 4577,
+      "currency": "USD",
+      "histPrice": 113.8634,
+      "currentPrice": 117.5750,
+      "plPricePercent": 0.032597,
+      "plPriceYTDPercent": 0.037686,
+      "plPriceAmount": 13752.48,
+      "value": 538140.78,
+      "portfolioPercent": 0.1260,
+      "startDate": "02.12.2024",
+      "valuationDate": "19.11.2025"
     }
   ],
-
-  "summaryByDate": [
+  "bonds": [
     {
-      "date": "2024-12-31",
-      "totalValue": 377900,
-      "avgWeight": 0.083
+      "isin": "IE00BYXYYJ35",
+      "name": "ISHARES USD CORP BOND USD A",
+      "quantity": 36019,
+      "currency": "USD",
+      "histPrice": 5.5307,
+      "currentPrice": 6.2630,
+      "plPricePercent": 0.132412,
+      "plPriceYTDPercent": 0.068498,
+      "plPriceAmount": 14683.23,
+      "value": 225587.00,
+      "portfolioPercent": 0.0528
     },
     {
-      "date": "2025-01-31",
-      "totalValue": 440400,
-      "avgWeight": 0.094
+      "isin": "IE00BGYWSV06",
+      "name": "VANGUARD USD CORP 1-3Y USDA",
+      "quantity": 2887,
+      "currency": "USD",
+      "histPrice": 53.2597,
+      "currentPrice": 60.7900,
+      "plPricePercent": 0.141388,
+      "plPriceYTDPercent": 0.051821,
+      "plPriceAmount": 8879.69,
+      "value": 175500.73,
+      "portfolioPercent": 0.0411
     },
     {
-      "date": "2025-02-28",
-      "totalValue": 486900,
-      "avgWeight": 0.102
+      "isin": "IE00BGYWFK87",
+      "name": "VANGUARD USD CORP USD-ACC",
+      "quantity": 1388,
+      "currency": "USD",
+      "histPrice": 52.8251,
+      "currentPrice": 60.7700,
+      "plPricePercent": 0.150400,
+      "plPriceYTDPercent": 0.067826,
+      "plPriceAmount": 5458.73,
+      "value": 84348.76,
+      "portfolioPercent": 0.0197
     },
     {
-      "date": "2025-03-31",
-      "totalValue": 567100,
-      "avgWeight": 0.115
+      "isin": "IE00BYXYYP94",
+      "name": "ISHARES USD SH DUR CORP USD A",
+      "quantity": 13357,
+      "currency": "USD",
+      "histPrice": 5.5506,
+      "currentPrice": 6.2720,
+      "plPricePercent": 0.129972,
+      "plPriceYTDPercent": 0.053941,
+      "plPriceAmount": 4405.12,
+      "value": 83775.10,
+      "portfolioPercent": 0.0196
     },
     {
-      "date": "2025-04-10",
-      "totalValue": 553400,
-      "avgWeight": 0.113
+      "isin": "LU1532289060",
+      "name": "ZEST GLOBAL SPECIAL SITUATION - I",
+      "quantity": 2001,
+      "currency": "USD",
+      "histPrice": 94.8199,
+      "currentPrice": 110.5400,
+      "plPricePercent": 0.165789,
+      "plPriceYTDPercent": 0.062987,
+      "plPriceAmount": 13588.71,
+      "value": 221190.54,
+      "portfolioPercent": 0.0518
+    },
+    {
+      "isin": "IE00B1FZS798",
+      "name": "ISHARES USD TREASURY 7-10Y",
+      "quantity": 1950,
+      "currency": "USD",
+      "histPrice": 179.3192,
+      "currentPrice": 174.7450,
+      "plPricePercent": -0.025509,
+      "plPriceYTDPercent": 0.033719,
+      "plPriceAmount": 18830.58,
+      "value": 340752.75,
+      "portfolioPercent": 0.0798
+    },
+    {
+      "isin": "IE00BFM6TD65",
+      "name": "ISHARES JPM USD EM CORP USD A",
+      "quantity": 19728,
+      "currency": "USD",
+      "histPrice": 5.2545,
+      "currentPrice": 6.6470,
+      "plPricePercent": 0.265001,
+      "plPriceYTDPercent": 0.078358,
+      "plPriceAmount": 9822.06,
+      "value": 131132.02,
+      "portfolioPercent": 0.0307
     }
-  ]
+  ],
+  "equities": [
+    {
+      "isin": "XS3124517601",
+      "name": "BOFA - Structured Note on SMI Index",
+      "quantity": 126000,
+      "currency": "USD",
+      "histPrice": 100.0000,
+      "currentPrice": 100.9500,
+      "plPricePercent": 0.009500,
+      "plPriceYTDPercent": 0.009500,
+      "plPriceAmount": 1197.00,
+      "value": 127197.00,
+      "portfolioPercent": 0.0298,
+      "expiryDate": "31.08.2027"
+    },
+    {
+      "isin": "IE00B53L3W79",
+      "name": "ISHARES CORE EURO STOXX 50",
+      "quantity": 1020,
+      "currency": "EUR",
+      "histPrice": 146.4787,
+      "currentPrice": 211.4000,
+      "plPricePercent": 0.443213,
+      "plPriceYTDPercent": 0.173532,
+      "plPriceAmount": 35561.18,
+      "fxRate": 1.1538,
+      "plFxAmount": 26622.65,
+      "plTotalPercent": 0.597013,
+      "plTotalAmount": 62183.83,
+      "value": 248791.59,
+      "portfolioPercent": 0.0582
+    },
+    {
+      "isin": "LU2962132416",
+      "name": "VG - PRIME GUARD US - I USD",
+      "quantity": 3291,
+      "currency": "USD",
+      "histPrice": 100.3319,
+      "currentPrice": 106.1500,
+      "plPricePercent": 0.057989,
+      "plPriceYTDPercent": 0.061500,
+      "plPriceAmount": 15349.16,
+      "value": 349339.65,
+      "portfolioPercent": 0.0818
+    },
+    {
+      "isin": "IE00B5BMR087",
+      "name": "ISHARES CORE S&P 500",
+      "quantity": 284,
+      "currency": "USD",
+      "histPrice": 445.1666,
+      "currentPrice": 709.3000,
+      "plPricePercent": 0.593336,
+      "plPriceYTDPercent": 0.131711,
+      "plPriceAmount": 7329.04,
+      "value": 201441.20,
+      "portfolioPercent": 0.0472
+    },
+    {
+      "isin": "LU0070214290",
+      "name": "JPM - US SELECT EQUITY - A",
+      "quantity": 199,
+      "currency": "USD",
+      "histPrice": 723.1680,
+      "currentPrice": 886.5400,
+      "plPricePercent": 0.225912,
+      "plPriceYTDPercent": 0.097706,
+      "plPriceAmount": 17268.79,
+      "value": 176421.46,
+      "portfolioPercent": 0.0413
+    },
+    {
+      "isin": "LU1327549934",
+      "name": "ZEST QUANTAMENTAL EQUITY - I",
+      "quantity": 1450,
+      "currency": "USD",
+      "histPrice": 109.8300,
+      "currentPrice": 120.7300,
+      "plPricePercent": 0.099244,
+      "plPriceYTDPercent": 0.060896,
+      "plPriceAmount": 9861.60,
+      "value": 175058.50,
+      "portfolioPercent": 0.0410
+    },
+    {
+      "isin": "XS1099717404",
+      "name": "RBC - Structured Note on SPX Index",
+      "quantity": 134,
+      "currency": "USD",
+      "histPrice": 1000.0000,
+      "currentPrice": 1141.0100,
+      "plPricePercent": 0.141010,
+      "plPriceYTDPercent": 0.080185,
+      "plPriceAmount": 11349.80,
+      "value": 152895.34,
+      "portfolioPercent": 0.0358,
+      "expiryDate": "25.06.2026"
+    },
+    {
+      "isin": "IE00BYXG2H39",
+      "name": "ISHARES NSDQ US BIOTECH",
+      "quantity": 13336,
+      "currency": "USD",
+      "histPrice": 6.0980,
+      "currentPrice": 8.0800,
+      "plPricePercent": 0.325025,
+      "plPriceYTDPercent": 0.292283,
+      "plPriceAmount": 24371.54,
+      "value": 107754.88,
+      "portfolioPercent": 0.0252
+    }
+  ],
+  "alternativeInvestments": [
+    {
+      "isin": "LU2853682941",
+      "name": "VG - MBC DIVERSIFIED - I2 USD",
+      "quantity": 3228,
+      "currency": "USD",
+      "histPrice": 110.3500,
+      "currentPrice": 114.5500,
+      "plPricePercent": 0.038061,
+      "plPriceYTDPercent": 0.059177,
+      "plPriceAmount": 21103.65,
+      "value": 369767.40,
+      "portfolioPercent": 0.0866
+    },
+    {
+      "isin": "LU1532291801",
+      "name": "ZEST NORTH AMERICA PAIRS RELATIVE - I",
+      "quantity": 1348,
+      "currency": "USD",
+      "histPrice": 103.6922,
+      "currentPrice": 122.5000,
+      "plPricePercent": 0.181381,
+      "plPriceYTDPercent": 0.036467,
+      "plPriceAmount": 4835.46,
+      "value": 165130.00,
+      "portfolioPercent": 0.0387
+    },
+    {
+      "isin": "LU1216091261",
+      "name": "ZEST MEDITERRANEUS ABSOLUTE VALUE - I",
+      "quantity": 97,
+      "currency": "EUR",
+      "histPrice": 1152.4900,
+      "currentPrice": 1363.8000,
+      "plPricePercent": 0.183351,
+      "plPriceYTDPercent": 0.083275,
+      "plPriceAmount": 10943.66,
+      "fxRate": 1.1538,
+      "plFxAmount": 16328.93,
+      "plTotalPercent": 0.337151,
+      "plTotalAmount": 27272.59,
+      "value": 152634.59,
+      "portfolioPercent": 0.0357
+    }
+  ],
+  "commodities": [
+    {
+      "isin": "CH0106027193",
+      "name": "UBS ETF GOLD",
+      "quantity": 1636,
+      "currency": "USD",
+      "histPrice": 97.4552,
+      "currentPrice": 130.3800,
+      "plPricePercent": 0.337846,
+      "plPriceYTDPercent": 0.398327,
+      "plPriceAmount": 54369.16,
+      "value": 213301.68,
+      "portfolioPercent": 0.0499,
+      "startDate": "06.03.2025"
+    }
+  ],
+  "others": [
+    {
+      "isin": "NLMLBV104478",
+      "name": "Merrill Lynch Put Wts S&P 500 20.03.26",
+      "quantity": 3439,
+      "currency": "USD",
+      "histPrice": 2.6100,
+      "currentPrice": 3.4626,
+      "plPricePercent": 0.326667,
+      "plPriceYTDPercent": 0.326667,
+      "plPriceAmount": 2932.09,
+      "value": 11907.88,
+      "portfolioPercent": 0.0028,
+      "expiryDate": "20.03.2026"
+    },
+    {
+      "isin": "XS3095180710",
+      "name": "MS Put Wts S&P 500",
+      "quantity": 3281,
+      "currency": "USD",
+      "histPrice": 2.1300,
+      "currentPrice": 0.4600,
+      "plPricePercent": -0.784038,
+      "plPriceYTDPercent": -0.784038,
+      "plPriceAmount": -5479.27,
+      "value": 1509.26,
+      "portfolioPercent": 0.0004,
+      "expiryDate": "19.12.2025"
+    },
+    {
+      "isin": "NLBNPLU39898",
+      "name": "BNP Paribas Put Wts S&P 500",
+      "quantity": 3117,
+      "currency": "USD",
+      "histPrice": 3.2800,
+      "currentPrice": 0.1700,
+      "plPricePercent": -0.948171,
+      "plPriceYTDPercent": -0.948171,
+      "plPriceAmount": -9693.87,
+      "value": 529.89,
+      "portfolioPercent": 0.0001,
+      "expiryDate": "19.12.2025"
+    }
+  ],
+  "capitalMovements": [
+    {
+      "type": "Cashin",
+      "insertDate": "17.10.2025",
+      "valueDate": "20.10.2025",
+      "currency": "USD",
+      "amount": 797.2,
+      "description": "GC PAGO CH1252907730000 TRN:NONREF RODRIGUEZ TERRAZAS SALVADOR",
+      "secCode": "USD"
+    },
+    {
+      "type": "Withdrawal",
+      "insertDate": "31.03.2025",
+      "valueDate": "31.03.2025",
+      "currency": "USD",
+      "amount": -500000,
+      "description": "NG PAGO A FAVOR DE BPS251272299900 ACTINVER CASA DE BOLSA, SA GRUPO FI",
+      "secCode": "USD"
+    }
+  ],
+  "performanceDetail": {
+    "realizedPL": {
+      "commodities": 504,
+      "alternativeInvestments": -117,
+      "bonds": 9164,
+      "equities": -28747,
+      "moneyMarket": 148,
+      "notDefined": 186,
+      "others": 9719,
+      "liquidity": -61002,
+      "fxc": 1793,
+      "total": -68352
+    },
+    "unrealizedPL": {
+      "commodities": 53865,
+      "alternativeInvestments": 37000,
+      "bonds": 66504,
+      "equities": 138279,
+      "moneyMarket": 13605,
+      "others": -12241,
+      "liquidity": 0,
+      "fxc": 40878,
+      "total": 337889
+    },
+    "managementFees": -42997,
+    "totalPerformance": 269537
+  }
 }

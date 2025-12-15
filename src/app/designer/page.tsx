@@ -41,15 +41,16 @@ export default function DesignerPage() {
       <div hidden={viewMode}>
         <div style={{ height: "80vh", width: "100%" }}>
           <ARJSDesigner
-            reportUri="/reports/financial.rdlx-json"
+            reportUri="/reports/portfolio.rdlx-json"
             onRender={onRender}
+            pageOrientation="Landscape"
           />
         </div>
       </div>
       <div hidden={!viewMode}>
         <div style={{ height: "80vh", width: "100%" }}>
           <ARJSViewer
-            reportUri="/reports/financial.rdlx-json"
+            reportUri="/reports/portfolio.rdlx-json"
             zoom={"FitToWidth"}
             sidebarVisible={true}
             panelsLayout={"sidebar"}
