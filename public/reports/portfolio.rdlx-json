@@ -1,5 +1,5 @@
 {
-  "Name": "NuovoReport1",
+  "Name": "NuovoReport1111",
   "Width": "0in",
   "EmbeddedImages": [
     {
@@ -81,22 +81,22 @@
   ],
   "Version": "10.0.2",
   "Page": {
-    "PageWidth": "8.5in",
-    "PageHeight": "11in",
+    "PageWidth": "11in",
+    "PageHeight": "8.5in",
     "RightMargin": "0in",
     "LeftMargin": "0in",
     "TopMargin": "0in",
     "BottomMargin": "0in",
     "Columns": 1,
     "ColumnSpacing": "0.5in",
-    "PaperOrientation": "Portrait"
+    "PaperOrientation": "Landscape"
   },
   "DataSources": [
     {
       "Name": "PortfolioData",
       "ConnectionProperties": {
         "DataProvider": "JSONEMBED",
-        "ConnectString": "jsondata={\\n  \"customerData\": [\\n    {\\n        \"clientName\": \"Rodriguez-Terrazas G.M. - 1.6783\",\\n        \"portfolioNumber\": \"0001.6783.0201\",\\n        \"bankName\": \"Bank Julius Baer & Co.\",\\n        \"referenceCurrency\": \"USD\",\\n        \"dateFrom\": \"31.12.2024\",\\n        \"dateTo\": \"19.11.2025\",\\n        \"totalValue\": 4271391,\\n        \"initialAsset\": 4501072,\\n        \"documentName\" : \"Asset Valuation of the Data Calculation\",\\n        \"performance\": {\\n            \"timeWeighted\": 0.06718,\\n            \"moneyWeighted\": 0.06512,\\n            \"differenceInValue\": -229666,\\n            \"depositsWithdrawals\": -499203,\\n            \"performanceAmount\": 269537\\n        }\\n    }\\n],\\n  \"monthlyPerformance\": [\\n    { \"month\": \"Jan 2025\", \"monthCode\": \"2025-01\", \"performance\": 0.0223 },\\n    { \"month\": \"Feb 2025\", \"monthCode\": \"2025-02\", \"performance\": -0.0053 },\\n    { \"month\": \"Mar 2025\", \"monthCode\": \"2025-03\", \"performance\": -0.0156 },\\n    { \"month\": \"Apr 2025\", \"monthCode\": \"2025-04\", \"performance\": 0.0027 },\\n    { \"month\": \"May 2025\", \"monthCode\": \"2025-05\", \"performance\": 0.0151 },\\n    { \"month\": \"Jun 2025\", \"monthCode\": \"2025-06\", \"performance\": 0.0140 },\\n    { \"month\": \"Jul 2025\", \"monthCode\": \"2025-07\", \"performance\": 0.0008 },\\n    { \"month\": \"Aug 2025\", \"monthCode\": \"2025-08\", \"performance\": 0.0152 },\\n    { \"month\": \"Sep 2025\", \"monthCode\": \"2025-09\", \"performance\": 0.0180 },\\n    { \"month\": \"Oct 2025\", \"monthCode\": \"2025-10\", \"performance\": 0.0064 },\\n    { \"month\": \"Nov 2025\", \"monthCode\": \"2025-11\", \"performance\": -0.0064 }\\n  ],\\n  \"assetAllocation\": [\\n    { \"category\": \"EQUITIES\", \"value\": 1555467, \"weight\": 0.3642 },\\n    { \"category\": \"BONDS\", \"value\": 1298949, \"weight\": 0.3041 },\\n    { \"category\": \"MONEY MARKET\", \"value\": 538141, \"weight\": 0.1260 },\\n    { \"category\": \"ALTERNATIVE INVESTMENTS\", \"value\": 369767, \"weight\": 0.0866 },\\n    { \"category\": \"LIQUIDITY\", \"value\": 281818, \"weight\": 0.0660 },\\n    { \"category\": \"COMMODITIES\", \"value\": 213302, \"weight\": 0.0499 },\\n    { \"category\": \"Other\", \"value\": 13947, \"weight\": 0.0033 }\\n  ],\\n  \"currencyAllocation\": [\\n    { \"currency\": \"US DOLLAR\", \"value\": 3868490, \"weight\": 0.9057 },\\n    { \"currency\": \"EURO\", \"value\": 402563, \"weight\": 0.0942 },\\n    { \"currency\": \"BRITISH POUND\", \"value\": 354, \"weight\": 0.0001 }\\n  ],\\n  \"cashAccounts\": [\\n    {\\n      \"currency\": \"USD\",\\n      \"accountNumber\": \"212033301\",\\n      \"description\": \"C/C USD 212033301\",\\n      \"value\": 15807.71,\\n      \"plAmount\": -61002.21,\\n      \"plPercent\": -0.015204,\\n      \"portfolioPercent\": 0.0037\\n    },\\n    {\\n      \"currency\": \"EUR\",\\n      \"accountNumber\": \"212081402\",\\n      \"description\": \"C/C EUR 212081402\",\\n      \"valueUSD\": 1136.69,\\n      \"valueCurrency\": 985.17,\\n      \"fxRate\": 1.1538,\\n      \"plFxAmount\": -294.84,\\n      \"portfolioPercent\": 0.0003\\n    },\\n    {\\n      \"currency\": \"GBP\",\\n      \"accountNumber\": \"212040201\",\\n      \"description\": \"C/C GBP 212040201\",\\n      \"valueUSD\": 354.07,\\n      \"valueCurrency\": 271.13,\\n      \"fxRate\": 1.3059,\\n      \"plFxAmount\": 14.51,\\n      \"portfolioPercent\": 0.0001\\n    }\\n  ],\\n  \"moneyMarket\": [\\n    {\\n      \"isin\": \"IE00BJXRT698\",\\n      \"name\": \"SPDR BBG 1-3M US T-BILL USDA\",\\n      \"quantity\": 4577,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 113.8634,\\n      \"currentPrice\": 117.5750,\\n      \"plPricePercent\": 0.032597,\\n      \"plPriceYTDPercent\": 0.037686,\\n      \"plPriceAmount\": 13752.48,\\n      \"value\": 538140.78,\\n      \"portfolioPercent\": 0.1260,\\n      \"startDate\": \"02.12.2024\",\\n      \"valuationDate\": \"19.11.2025\"\\n    }\\n  ],\\n  \"bonds\": [\\n    {\\n      \"isin\": \"IE00BYXYYJ35\",\\n      \"name\": \"ISHARES USD CORP BOND USD A\",\\n      \"quantity\": 36019,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 5.5307,\\n      \"currentPrice\": 6.2630,\\n      \"plPricePercent\": 0.132412,\\n      \"plPriceYTDPercent\": 0.068498,\\n      \"plPriceAmount\": 14683.23,\\n      \"value\": 225587.00,\\n      \"portfolioPercent\": 0.0528\\n    },\\n    {\\n      \"isin\": \"IE00BGYWSV06\",\\n      \"name\": \"VANGUARD USD CORP 1-3Y USDA\",\\n      \"quantity\": 2887,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 53.2597,\\n      \"currentPrice\": 60.7900,\\n      \"plPricePercent\": 0.141388,\\n      \"plPriceYTDPercent\": 0.051821,\\n      \"plPriceAmount\": 8879.69,\\n      \"value\": 175500.73,\\n      \"portfolioPercent\": 0.0411\\n    },\\n    {\\n      \"isin\": \"IE00BGYWFK87\",\\n      \"name\": \"VANGUARD USD CORP USD-ACC\",\\n      \"quantity\": 1388,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 52.8251,\\n      \"currentPrice\": 60.7700,\\n      \"plPricePercent\": 0.150400,\\n      \"plPriceYTDPercent\": 0.067826,\\n      \"plPriceAmount\": 5458.73,\\n      \"value\": 84348.76,\\n      \"portfolioPercent\": 0.0197\\n    },\\n    {\\n      \"isin\": \"IE00BYXYYP94\",\\n      \"name\": \"ISHARES USD SH DUR CORP USD A\",\\n      \"quantity\": 13357,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 5.5506,\\n      \"currentPrice\": 6.2720,\\n      \"plPricePercent\": 0.129972,\\n      \"plPriceYTDPercent\": 0.053941,\\n      \"plPriceAmount\": 4405.12,\\n      \"value\": 83775.10,\\n      \"portfolioPercent\": 0.0196\\n    },\\n    {\\n      \"isin\": \"LU1532289060\",\\n      \"name\": \"ZEST GLOBAL SPECIAL SITUATION - I\",\\n      \"quantity\": 2001,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 94.8199,\\n      \"currentPrice\": 110.5400,\\n      \"plPricePercent\": 0.165789,\\n      \"plPriceYTDPercent\": 0.062987,\\n      \"plPriceAmount\": 13588.71,\\n      \"value\": 221190.54,\\n      \"portfolioPercent\": 0.0518\\n    },\\n    {\\n      \"isin\": \"IE00B1FZS798\",\\n      \"name\": \"ISHARES USD TREASURY 7-10Y\",\\n      \"quantity\": 1950,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 179.3192,\\n      \"currentPrice\": 174.7450,\\n      \"plPricePercent\": -0.025509,\\n      \"plPriceYTDPercent\": 0.033719,\\n      \"plPriceAmount\": 18830.58,\\n      \"value\": 340752.75,\\n      \"portfolioPercent\": 0.0798\\n    },\\n    {\\n      \"isin\": \"IE00BFM6TD65\",\\n      \"name\": \"ISHARES JPM USD EM CORP USD A\",\\n      \"quantity\": 19728,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 5.2545,\\n      \"currentPrice\": 6.6470,\\n      \"plPricePercent\": 0.265001,\\n      \"plPriceYTDPercent\": 0.078358,\\n      \"plPriceAmount\": 9822.06,\\n      \"value\": 131132.02,\\n      \"portfolioPercent\": 0.0307\\n    }\\n  ],\\n  \"equities\": [\\n    {\\n      \"isin\": \"XS3124517601\",\\n      \"name\": \"BOFA - Structured Note on SMI Index\",\\n      \"quantity\": 126000,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 100.0000,\\n      \"currentPrice\": 100.9500,\\n      \"plPricePercent\": 0.009500,\\n      \"plPriceYTDPercent\": 0.009500,\\n      \"plPriceAmount\": 1197.00,\\n      \"value\": 127197.00,\\n      \"portfolioPercent\": 0.0298,\\n      \"expiryDate\": \"31.08.2027\"\\n    },\\n    {\\n      \"isin\": \"IE00B53L3W79\",\\n      \"name\": \"ISHARES CORE EURO STOXX 50\",\\n      \"quantity\": 1020,\\n      \"currency\": \"EUR\",\\n      \"histPrice\": 146.4787,\\n      \"currentPrice\": 211.4000,\\n      \"plPricePercent\": 0.443213,\\n      \"plPriceYTDPercent\": 0.173532,\\n      \"plPriceAmount\": 35561.18,\\n      \"fxRate\": 1.1538,\\n      \"plFxAmount\": 26622.65,\\n      \"plTotalPercent\": 0.597013,\\n      \"plTotalAmount\": 62183.83,\\n      \"value\": 248791.59,\\n      \"portfolioPercent\": 0.0582\\n    },\\n    {\\n      \"isin\": \"LU2962132416\",\\n      \"name\": \"VG - PRIME GUARD US - I USD\",\\n      \"quantity\": 3291,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 100.3319,\\n      \"currentPrice\": 106.1500,\\n      \"plPricePercent\": 0.057989,\\n      \"plPriceYTDPercent\": 0.061500,\\n      \"plPriceAmount\": 15349.16,\\n      \"value\": 349339.65,\\n      \"portfolioPercent\": 0.0818\\n    },\\n    {\\n      \"isin\": \"IE00B5BMR087\",\\n      \"name\": \"ISHARES CORE S&P 500\",\\n      \"quantity\": 284,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 445.1666,\\n      \"currentPrice\": 709.3000,\\n      \"plPricePercent\": 0.593336,\\n      \"plPriceYTDPercent\": 0.131711,\\n      \"plPriceAmount\": 7329.04,\\n      \"value\": 201441.20,\\n      \"portfolioPercent\": 0.0472\\n    },\\n    {\\n      \"isin\": \"LU0070214290\",\\n      \"name\": \"JPM - US SELECT EQUITY - A\",\\n      \"quantity\": 199,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 723.1680,\\n      \"currentPrice\": 886.5400,\\n      \"plPricePercent\": 0.225912,\\n      \"plPriceYTDPercent\": 0.097706,\\n      \"plPriceAmount\": 17268.79,\\n      \"value\": 176421.46,\\n      \"portfolioPercent\": 0.0413\\n    },\\n    {\\n      \"isin\": \"LU1327549934\",\\n      \"name\": \"ZEST QUANTAMENTAL EQUITY - I\",\\n      \"quantity\": 1450,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 109.8300,\\n      \"currentPrice\": 120.7300,\\n      \"plPricePercent\": 0.099244,\\n      \"plPriceYTDPercent\": 0.060896,\\n      \"plPriceAmount\": 9861.60,\\n      \"value\": 175058.50,\\n      \"portfolioPercent\": 0.0410\\n    },\\n    {\\n      \"isin\": \"XS1099717404\",\\n      \"name\": \"RBC - Structured Note on SPX Index\",\\n      \"quantity\": 134,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 1000.0000,\\n      \"currentPrice\": 1141.0100,\\n      \"plPricePercent\": 0.141010,\\n      \"plPriceYTDPercent\": 0.080185,\\n      \"plPriceAmount\": 11349.80,\\n      \"value\": 152895.34,\\n      \"portfolioPercent\": 0.0358,\\n      \"expiryDate\": \"25.06.2026\"\\n    },\\n    {\\n      \"isin\": \"IE00BYXG2H39\",\\n      \"name\": \"ISHARES NSDQ US BIOTECH\",\\n      \"quantity\": 13336,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 6.0980,\\n      \"currentPrice\": 8.0800,\\n      \"plPricePercent\": 0.325025,\\n      \"plPriceYTDPercent\": 0.292283,\\n      \"plPriceAmount\": 24371.54,\\n      \"value\": 107754.88,\\n      \"portfolioPercent\": 0.0252\\n    }\\n  ],\\n  \"alternativeInvestments\": [\\n    {\\n      \"isin\": \"LU2853682941\",\\n      \"name\": \"VG - MBC DIVERSIFIED - I2 USD\",\\n      \"quantity\": 3228,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 110.3500,\\n      \"currentPrice\": 114.5500,\\n      \"plPricePercent\": 0.038061,\\n      \"plPriceYTDPercent\": 0.059177,\\n      \"plPriceAmount\": 21103.65,\\n      \"value\": 369767.40,\\n      \"portfolioPercent\": 0.0866\\n    },\\n    {\\n      \"isin\": \"LU1532291801\",\\n      \"name\": \"ZEST NORTH AMERICA PAIRS RELATIVE - I\",\\n      \"quantity\": 1348,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 103.6922,\\n      \"currentPrice\": 122.5000,\\n      \"plPricePercent\": 0.181381,\\n      \"plPriceYTDPercent\": 0.036467,\\n      \"plPriceAmount\": 4835.46,\\n      \"value\": 165130.00,\\n      \"portfolioPercent\": 0.0387\\n    },\\n    {\\n      \"isin\": \"LU1216091261\",\\n      \"name\": \"ZEST MEDITERRANEUS ABSOLUTE VALUE - I\",\\n      \"quantity\": 97,\\n      \"currency\": \"EUR\",\\n      \"histPrice\": 1152.4900,\\n      \"currentPrice\": 1363.8000,\\n      \"plPricePercent\": 0.183351,\\n      \"plPriceYTDPercent\": 0.083275,\\n      \"plPriceAmount\": 10943.66,\\n      \"fxRate\": 1.1538,\\n      \"plFxAmount\": 16328.93,\\n      \"plTotalPercent\": 0.337151,\\n      \"plTotalAmount\": 27272.59,\\n      \"value\": 152634.59,\\n      \"portfolioPercent\": 0.0357\\n    }\\n  ],\\n  \"commodities\": [\\n    {\\n      \"isin\": \"CH0106027193\",\\n      \"name\": \"UBS ETF GOLD\",\\n      \"quantity\": 1636,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 97.4552,\\n      \"currentPrice\": 130.3800,\\n      \"plPricePercent\": 0.337846,\\n      \"plPriceYTDPercent\": 0.398327,\\n      \"plPriceAmount\": 54369.16,\\n      \"value\": 213301.68,\\n      \"portfolioPercent\": 0.0499,\\n      \"startDate\": \"06.03.2025\"\\n    }\\n  ],\\n  \"others\": [\\n    {\\n      \"isin\": \"NLMLBV104478\",\\n      \"name\": \"Merrill Lynch Put Wts S&P 500 20.03.26\",\\n      \"quantity\": 3439,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 2.6100,\\n      \"currentPrice\": 3.4626,\\n      \"plPricePercent\": 0.326667,\\n      \"plPriceYTDPercent\": 0.326667,\\n      \"plPriceAmount\": 2932.09,\\n      \"value\": 11907.88,\\n      \"portfolioPercent\": 0.0028,\\n      \"expiryDate\": \"20.03.2026\"\\n    },\\n    {\\n      \"isin\": \"XS3095180710\",\\n      \"name\": \"MS Put Wts S&P 500\",\\n      \"quantity\": 3281,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 2.1300,\\n      \"currentPrice\": 0.4600,\\n      \"plPricePercent\": -0.784038,\\n      \"plPriceYTDPercent\": -0.784038,\\n      \"plPriceAmount\": -5479.27,\\n      \"value\": 1509.26,\\n      \"portfolioPercent\": 0.0004,\\n      \"expiryDate\": \"19.12.2025\"\\n    },\\n    {\\n      \"isin\": \"NLBNPLU39898\",\\n      \"name\": \"BNP Paribas Put Wts S&P 500\",\\n      \"quantity\": 3117,\\n      \"currency\": \"USD\",\\n      \"histPrice\": 3.2800,\\n      \"currentPrice\": 0.1700,\\n      \"plPricePercent\": -0.948171,\\n      \"plPriceYTDPercent\": -0.948171,\\n      \"plPriceAmount\": -9693.87,\\n      \"value\": 529.89,\\n      \"portfolioPercent\": 0.0001,\\n      \"expiryDate\": \"19.12.2025\"\\n    }\\n  ],\\n  \"capitalMovements\": [\\n    {\\n      \"type\": \"Cashin\",\\n      \"insertDate\": \"17.10.2025\",\\n      \"valueDate\": \"20.10.2025\",\\n      \"currency\": \"USD\",\\n      \"amount\": 797.2,\\n      \"description\": \"GC PAGO CH1252907730000 TRN:NONREF RODRIGUEZ TERRAZAS SALVADOR\",\\n      \"secCode\": \"USD\"\\n    },\\n    {\\n      \"type\": \"Withdrawal\",\\n      \"insertDate\": \"31.03.2025\",\\n      \"valueDate\": \"31.03.2025\",\\n      \"currency\": \"USD\",\\n      \"amount\": -500000,\\n      \"description\": \"NG PAGO A FAVOR DE BPS251272299900 ACTINVER CASA DE BOLSA, SA GRUPO FI\",\\n      \"secCode\": \"USD\"\\n    }\\n  ],\\n  \"performanceDetail\": {\\n    \"realizedPL\": {\\n      \"commodities\": 504,\\n      \"alternativeInvestments\": -117,\\n      \"bonds\": 9164,\\n      \"equities\": -28747,\\n      \"moneyMarket\": 148,\\n      \"notDefined\": 186,\\n      \"others\": 9719,\\n      \"liquidity\": -61002,\\n      \"fxc\": 1793,\\n      \"total\": -68352\\n    },\\n    \"unrealizedPL\": {\\n      \"commodities\": 53865,\\n      \"alternativeInvestments\": 37000,\\n      \"bonds\": 66504,\\n      \"equities\": 138279,\\n      \"moneyMarket\": 13605,\\n      \"others\": -12241,\\n      \"liquidity\": 0,\\n      \"fxc\": 40878,\\n      \"total\": 337889\\n    },\\n    \"managementFees\": -42997,\\n    \"totalPerformance\": 269537\\n  }\\n}"
+        "ConnectString": "jsondata={\"customerData\":[{\"clientName\":\"Rodriguez-Terrazas G.M. - 1.6783\",\"portfolioNumber\":\"0001.6783.0201\",\"bankName\":\"Bank Julius Baer & Co.\",\"referenceCurrency\":\"USD\",\"dateFrom\":\"31.12.2024\",\"dateTo\":\"19.11.2025\",\"totalValue\":4271391,\"initialAsset\":4501072,\"documentName\":\"Asset Valuation of the Data Calculation\",\"performance\":{\"timeWeighted\":0.06718,\"moneyWeighted\":0.06512,\"differenceInValue\":-229666,\"depositsWithdrawals\":-499203,\"performanceAmount\":269537}}],\"monthlyPerformance\":[{\"month\":\"Jan 2025\",\"monthCode\":\"2025-01\",\"performance\":0.0223},{\"month\":\"Feb 2025\",\"monthCode\":\"2025-02\",\"performance\":-0.0053},{\"month\":\"Mar 2025\",\"monthCode\":\"2025-03\",\"performance\":-0.0156},{\"month\":\"Apr 2025\",\"monthCode\":\"2025-04\",\"performance\":0.0027},{\"month\":\"May 2025\",\"monthCode\":\"2025-05\",\"performance\":0.0151},{\"month\":\"Jun 2025\",\"monthCode\":\"2025-06\",\"performance\":0.014},{\"month\":\"Jul 2025\",\"monthCode\":\"2025-07\",\"performance\":0.0008},{\"month\":\"Aug 2025\",\"monthCode\":\"2025-08\",\"performance\":0.0152},{\"month\":\"Sep 2025\",\"monthCode\":\"2025-09\",\"performance\":0.018},{\"month\":\"Oct 2025\",\"monthCode\":\"2025-10\",\"performance\":0.0064},{\"month\":\"Nov 2025\",\"monthCode\":\"2025-11\",\"performance\":-0.0064}],\"assetAllocation\":[{\"category\":\"EQUITIES\",\"value\":1555467,\"weight\":0.3642},{\"category\":\"BONDS\",\"value\":1298949,\"weight\":0.3041},{\"category\":\"MONEY MARKET\",\"value\":538141,\"weight\":0.126},{\"category\":\"ALTERNATIVE INVESTMENTS\",\"value\":369767,\"weight\":0.0866},{\"category\":\"LIQUIDITY\",\"value\":281818,\"weight\":0.066},{\"category\":\"COMMODITIES\",\"value\":213302,\"weight\":0.0499},{\"category\":\"Other\",\"value\":13947,\"weight\":0.0033}],\"currencyAllocation\":[{\"currency\":\"US DOLLAR\",\"value\":3868490,\"weight\":0.9057},{\"currency\":\"EURO\",\"value\":402563,\"weight\":0.0942},{\"currency\":\"BRITISH POUND\",\"value\":354,\"weight\":0.0001}],\"cashAccounts\":[{\"currency\":\"USD\",\"accountNumber\":\"212033301\",\"description\":\"C/C USD 212033301\",\"value\":15807.71,\"plAmount\":-61002.21,\"plPercent\":-0.015204,\"portfolioPercent\":0.0037},{\"currency\":\"EUR\",\"accountNumber\":\"212081402\",\"description\":\"C/C EUR 212081402\",\"valueUSD\":1136.69,\"valueCurrency\":985.17,\"fxRate\":1.1538,\"plFxAmount\":-294.84,\"portfolioPercent\":0.0003},{\"currency\":\"GBP\",\"accountNumber\":\"212040201\",\"description\":\"C/C GBP 212040201\",\"valueUSD\":354.07,\"valueCurrency\":271.13,\"fxRate\":1.3059,\"plFxAmount\":14.51,\"portfolioPercent\":0.0001}],\"moneyMarket\":[{\"isin\":\"IE00BJXRT698\",\"name\":\"SPDR BBG 1-3M US T-BILL USDA\",\"quantity\":4577,\"currency\":\"USD\",\"histPrice\":113.8634,\"currentPrice\":117.575,\"plPricePercent\":0.032597,\"plPriceYTDPercent\":0.037686,\"plPriceAmount\":13752.48,\"value\":538140.78,\"portfolioPercent\":0.126,\"startDate\":\"02.12.2024\",\"valuationDate\":\"19.11.2025\"}],\"bonds\":[{\"isin\":\"IE00BYXYYJ35\",\"name\":\"ISHARES USD CORP BOND USD A\",\"quantity\":36019,\"currency\":\"USD\",\"histPrice\":5.5307,\"currentPrice\":6.263,\"plPricePercent\":0.132412,\"plPriceYTDPercent\":0.068498,\"plPriceAmount\":14683.23,\"value\":225587,\"portfolioPercent\":0.0528},{\"isin\":\"IE00BGYWSV06\",\"name\":\"VANGUARD USD CORP 1-3Y USDA\",\"quantity\":2887,\"currency\":\"USD\",\"histPrice\":53.2597,\"currentPrice\":60.79,\"plPricePercent\":0.141388,\"plPriceYTDPercent\":0.051821,\"plPriceAmount\":8879.69,\"value\":175500.73,\"portfolioPercent\":0.0411},{\"isin\":\"IE00BGYWFK87\",\"name\":\"VANGUARD USD CORP USD-ACC\",\"quantity\":1388,\"currency\":\"USD\",\"histPrice\":52.8251,\"currentPrice\":60.77,\"plPricePercent\":0.1504,\"plPriceYTDPercent\":0.067826,\"plPriceAmount\":5458.73,\"value\":84348.76,\"portfolioPercent\":0.0197},{\"isin\":\"IE00BYXYYP94\",\"name\":\"ISHARES USD SH DUR CORP USD A\",\"quantity\":13357,\"currency\":\"USD\",\"histPrice\":5.5506,\"currentPrice\":6.272,\"plPricePercent\":0.129972,\"plPriceYTDPercent\":0.053941,\"plPriceAmount\":4405.12,\"value\":83775.1,\"portfolioPercent\":0.0196},{\"isin\":\"LU1532289060\",\"name\":\"ZEST GLOBAL SPECIAL SITUATION - I\",\"quantity\":2001,\"currency\":\"USD\",\"histPrice\":94.8199,\"currentPrice\":110.54,\"plPricePercent\":0.165789,\"plPriceYTDPercent\":0.062987,\"plPriceAmount\":13588.71,\"value\":221190.54,\"portfolioPercent\":0.0518},{\"isin\":\"IE00B1FZS798\",\"name\":\"ISHARES USD TREASURY 7-10Y\",\"quantity\":1950,\"currency\":\"USD\",\"histPrice\":179.3192,\"currentPrice\":174.745,\"plPricePercent\":-0.025509,\"plPriceYTDPercent\":0.033719,\"plPriceAmount\":18830.58,\"value\":340752.75,\"portfolioPercent\":0.0798},{\"isin\":\"IE00BFM6TD65\",\"name\":\"ISHARES JPM USD EM CORP USD A\",\"quantity\":19728,\"currency\":\"USD\",\"histPrice\":5.2545,\"currentPrice\":6.647,\"plPricePercent\":0.265001,\"plPriceYTDPercent\":0.078358,\"plPriceAmount\":9822.06,\"value\":131132.02,\"portfolioPercent\":0.0307}],\"equities\":[{\"isin\":\"XS3124517601\",\"name\":\"BOFA - Structured Note on SMI Index\",\"quantity\":126000,\"currency\":\"USD\",\"histPrice\":100,\"currentPrice\":100.95,\"plPricePercent\":0.0095,\"plPriceYTDPercent\":0.0095,\"plPriceAmount\":1197,\"value\":127197,\"portfolioPercent\":0.0298,\"expiryDate\":\"31.08.2027\"},{\"isin\":\"IE00B53L3W79\",\"name\":\"ISHARES CORE EURO STOXX 50\",\"quantity\":1020,\"currency\":\"EUR\",\"histPrice\":146.4787,\"currentPrice\":211.4,\"plPricePercent\":0.443213,\"plPriceYTDPercent\":0.173532,\"plPriceAmount\":35561.18,\"fxRate\":1.1538,\"plFxAmount\":26622.65,\"plTotalPercent\":0.597013,\"plTotalAmount\":62183.83,\"value\":248791.59,\"portfolioPercent\":0.0582},{\"isin\":\"LU2962132416\",\"name\":\"VG - PRIME GUARD US - I USD\",\"quantity\":3291,\"currency\":\"USD\",\"histPrice\":100.3319,\"currentPrice\":106.15,\"plPricePercent\":0.057989,\"plPriceYTDPercent\":0.0615,\"plPriceAmount\":15349.16,\"value\":349339.65,\"portfolioPercent\":0.0818},{\"isin\":\"IE00B5BMR087\",\"name\":\"ISHARES CORE S&P 500\",\"quantity\":284,\"currency\":\"USD\",\"histPrice\":445.1666,\"currentPrice\":709.3,\"plPricePercent\":0.593336,\"plPriceYTDPercent\":0.131711,\"plPriceAmount\":7329.04,\"value\":201441.2,\"portfolioPercent\":0.0472},{\"isin\":\"LU0070214290\",\"name\":\"JPM - US SELECT EQUITY - A\",\"quantity\":199,\"currency\":\"USD\",\"histPrice\":723.168,\"currentPrice\":886.54,\"plPricePercent\":0.225912,\"plPriceYTDPercent\":0.097706,\"plPriceAmount\":17268.79,\"value\":176421.46,\"portfolioPercent\":0.0413},{\"isin\":\"LU1327549934\",\"name\":\"ZEST QUANTAMENTAL EQUITY - I\",\"quantity\":1450,\"currency\":\"USD\",\"histPrice\":109.83,\"currentPrice\":120.73,\"plPricePercent\":0.099244,\"plPriceYTDPercent\":0.060896,\"plPriceAmount\":9861.6,\"value\":175058.5,\"portfolioPercent\":0.041},{\"isin\":\"XS1099717404\",\"name\":\"RBC - Structured Note on SPX Index\",\"quantity\":134,\"currency\":\"USD\",\"histPrice\":1000,\"currentPrice\":1141.01,\"plPricePercent\":0.14101,\"plPriceYTDPercent\":0.080185,\"plPriceAmount\":11349.8,\"value\":152895.34,\"portfolioPercent\":0.0358,\"expiryDate\":\"25.06.2026\"},{\"isin\":\"IE00BYXG2H39\",\"name\":\"ISHARES NSDQ US BIOTECH\",\"quantity\":13336,\"currency\":\"USD\",\"histPrice\":6.098,\"currentPrice\":8.08,\"plPricePercent\":0.325025,\"plPriceYTDPercent\":0.292283,\"plPriceAmount\":24371.54,\"value\":107754.88,\"portfolioPercent\":0.0252}],\"alternativeInvestments\":[{\"isin\":\"LU2853682941\",\"name\":\"VG - MBC DIVERSIFIED - I2 USD\",\"quantity\":3228,\"currency\":\"USD\",\"histPrice\":110.35,\"currentPrice\":114.55,\"plPricePercent\":0.038061,\"plPriceYTDPercent\":0.059177,\"plPriceAmount\":21103.65,\"value\":369767.4,\"portfolioPercent\":0.0866},{\"isin\":\"LU1532291801\",\"name\":\"ZEST NORTH AMERICA PAIRS RELATIVE - I\",\"quantity\":1348,\"currency\":\"USD\",\"histPrice\":103.6922,\"currentPrice\":122.5,\"plPricePercent\":0.181381,\"plPriceYTDPercent\":0.036467,\"plPriceAmount\":4835.46,\"value\":165130,\"portfolioPercent\":0.0387},{\"isin\":\"LU1216091261\",\"name\":\"ZEST MEDITERRANEUS ABSOLUTE VALUE - I\",\"quantity\":97,\"currency\":\"EUR\",\"histPrice\":1152.49,\"currentPrice\":1363.8,\"plPricePercent\":0.183351,\"plPriceYTDPercent\":0.083275,\"plPriceAmount\":10943.66,\"fxRate\":1.1538,\"plFxAmount\":16328.93,\"plTotalPercent\":0.337151,\"plTotalAmount\":27272.59,\"value\":152634.59,\"portfolioPercent\":0.0357}],\"commodities\":[{\"isin\":\"CH0106027193\",\"name\":\"UBS ETF GOLD\",\"quantity\":1636,\"currency\":\"USD\",\"histPrice\":97.4552,\"currentPrice\":130.38,\"plPricePercent\":0.337846,\"plPriceYTDPercent\":0.398327,\"plPriceAmount\":54369.16,\"value\":213301.68,\"portfolioPercent\":0.0499,\"startDate\":\"06.03.2025\"}],\"others\":[{\"isin\":\"NLMLBV104478\",\"name\":\"Merrill Lynch Put Wts S&P 500 20.03.26\",\"quantity\":3439,\"currency\":\"USD\",\"histPrice\":2.61,\"currentPrice\":3.4626,\"plPricePercent\":0.326667,\"plPriceYTDPercent\":0.326667,\"plPriceAmount\":2932.09,\"value\":11907.88,\"portfolioPercent\":0.0028,\"expiryDate\":\"20.03.2026\"},{\"isin\":\"XS3095180710\",\"name\":\"MS Put Wts S&P 500\",\"quantity\":3281,\"currency\":\"USD\",\"histPrice\":2.13,\"currentPrice\":0.46,\"plPricePercent\":-0.784038,\"plPriceYTDPercent\":-0.784038,\"plPriceAmount\":-5479.27,\"value\":1509.26,\"portfolioPercent\":0.0004,\"expiryDate\":\"19.12.2025\"},{\"isin\":\"NLBNPLU39898\",\"name\":\"BNP Paribas Put Wts S&P 500\",\"quantity\":3117,\"currency\":\"USD\",\"histPrice\":3.28,\"currentPrice\":0.17,\"plPricePercent\":-0.948171,\"plPriceYTDPercent\":-0.948171,\"plPriceAmount\":-9693.87,\"value\":529.89,\"portfolioPercent\":0.0001,\"expiryDate\":\"19.12.2025\"}],\"capitalMovements\":[{\"type\":\"Cashin\",\"insertDate\":\"17.10.2025\",\"valueDate\":\"20.10.2025\",\"currency\":\"USD\",\"amount\":797.2,\"description\":\"GC PAGO CH1252907730000 TRN:NONREF RODRIGUEZ TERRAZAS SALVADOR\",\"secCode\":\"USD\"},{\"type\":\"Withdrawal\",\"insertDate\":\"31.03.2025\",\"valueDate\":\"31.03.2025\",\"currency\":\"USD\",\"amount\":-500000,\"description\":\"NG PAGO A FAVOR DE BPS251272299900 ACTINVER CASA DE BOLSA, SA GRUPO FI\",\"secCode\":\"USD\"}],\"performanceDetail\":{\"realizedPL\":{\"commodities\":504,\"alternativeInvestments\":-117,\"bonds\":9164,\"equities\":-28747,\"moneyMarket\":148,\"notDefined\":186,\"others\":9719,\"liquidity\":-61002,\"fxc\":1793,\"total\":-68352},\"unrealizedPL\":{\"commodities\":53865,\"alternativeInvestments\":37000,\"bonds\":66504,\"equities\":138279,\"moneyMarket\":13605,\"others\":-12241,\"liquidity\":0,\"fxc\":40878,\"total\":337889},\"managementFees\":-42997,\"totalPerformance\":269537}}"
       }
     }
   ],
@@ -143,7 +143,8 @@
               "PaddingLeft": "2pt",
               "PaddingRight": "2pt",
               "PaddingTop": "2pt",
-              "PaddingBottom": "2pt"
+              "PaddingBottom": "2pt",
+              "TextAlign": "Left"
             },
             "Left": "0.2708in",
             "Top": "1.5104in",
@@ -240,6 +241,670 @@
             "Top": "6.5001in",
             "Width": "3.6146in",
             "Height": "0.7501in"
+          }
+        ]
+      }
+    },
+    {
+      "Type": "Continuous",
+      "Name": "ContinuousSection2",
+      "Page": {
+        "PageWidth": "11in",
+        "PageHeight": "8.5in",
+        "RightMargin": "0.5in",
+        "LeftMargin": "0.5in",
+        "TopMargin": "0.5in",
+        "BottomMargin": "0.5in",
+        "Columns": 1,
+        "ColumnSpacing": "0.5in",
+        "PaperOrientation": "Landscape"
+      },
+      "Width": "10in",
+      "PageHeader": {
+        "Height": "1.2394in",
+        "ReportItems": [
+          {
+            "Type": "image",
+            "Name": "Image2",
+            "Source": "Embedded",
+            "Value": "logo (1)",
+            "MIMEType": "image/jpeg",
+            "Sizing": "Fit",
+            "Left": "8.8021in",
+            "Top": "0.0417in",
+            "Width": "1.1771in",
+            "Height": "1.1456in"
+          },
+          {
+            "Type": "line",
+            "Name": "Line2",
+            "ZIndex": 1,
+            "StartPoint": {
+              "X": "0in",
+              "Y": "0in"
+            },
+            "EndPoint": {
+              "X": "10in",
+              "Y": "0.0208in"
+            }
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox7",
+            "ZIndex": 2,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "Indice",
+            "Style": {
+              "FontWeight": "Bold",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.2708in",
+            "Top": "0.0416in",
+            "Width": "1in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox8",
+            "ZIndex": 3,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "{(dateFrom, \"customerData\")} - {(dateTo, \"customerData\")}",
+            "Style": {
+              "FontSize": "8pt",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.2708in",
+            "Top": "0.3333in",
+            "Width": "4.3333in",
+            "Height": "0.2813in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox9",
+            "ZIndex": 4,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "=\"Portfolio: \" & Count(Fields!portfolioNumber.Value, \"customerData\")",
+            "Style": {
+              "FontSize": "8pt",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.2666in",
+            "Top": "0.6248in",
+            "Width": "5.7604in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox10",
+            "ZIndex": 5,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "=\"Reference Currency: \" & Count(Fields!referenceCurrency.Value, \"customerData\")",
+            "Style": {
+              "FontSize": "8pt",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.2707in",
+            "Top": "0.8685in",
+            "Width": "5.7604in",
+            "Height": "0.25in"
+          }
+        ]
+      },
+      "Body": {
+        "Height": "2.3543in",
+        "ReportItems": [
+          {
+            "Type": "line",
+            "Name": "Line1",
+            "StartPoint": {
+              "X": "0in",
+              "Y": "0in"
+            },
+            "EndPoint": {
+              "X": "9.9896in",
+              "Y": "0.0104in"
+            }
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox11",
+            "ZIndex": 1,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "=Count(Fields!documentName.Value, \"customerData\")",
+            "Style": {
+              "FontWeight": "Bold",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt",
+              "TextAlign": "Left"
+            },
+            "Left": "0.2708in",
+            "Top": "0.1771in",
+            "Width": "5.7604in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox12",
+            "ZIndex": 2,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "New Page",
+            "Style": {
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.25in",
+            "Top": "0.5in",
+            "Width": "9.6458in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox13",
+            "ZIndex": 3,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "Management Report",
+            "Style": {
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.2604in",
+            "Top": "0.8125in",
+            "Width": "9.6458in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox14",
+            "ZIndex": 4,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "Reference Detail",
+            "Style": {
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.2708in",
+            "Top": "1.1354in",
+            "Width": "9.6458in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox15",
+            "ZIndex": 5,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "Asset Valutation",
+            "Style": {
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.2535in",
+            "Top": "1.4514in",
+            "Width": "9.6458in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox16",
+            "ZIndex": 6,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "Capital Moviments",
+            "Style": {
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.257in",
+            "Top": "1.7882in",
+            "Width": "9.6458in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox17",
+            "ZIndex": 7,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "General Information",
+            "Style": {
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.25in",
+            "Top": "2.1043in",
+            "Width": "9.6458in",
+            "Height": "0.25in"
+          }
+        ]
+      }
+    },
+    {
+      "Type": "Continuous",
+      "Name": "ContinuousSection3",
+      "Page": {
+        "PageWidth": "11in",
+        "PageHeight": "8.5in",
+        "RightMargin": "0.5in",
+        "LeftMargin": "0.5in",
+        "TopMargin": "0.5in",
+        "BottomMargin": "0.5in",
+        "Columns": 1,
+        "ColumnSpacing": "0.5in",
+        "PaperOrientation": "Landscape"
+      },
+      "Width": "10in",
+      "PageHeader": {
+        "Height": "1.2493in",
+        "ReportItems": [
+          {
+            "Type": "image",
+            "Name": "Image3",
+            "Source": "Embedded",
+            "Value": "logo (1)",
+            "MIMEType": "image/jpeg",
+            "Sizing": "Fit",
+            "Left": "8.8021in",
+            "Top": "0.0417in",
+            "Width": "1.1771in",
+            "Height": "1.1456in"
+          },
+          {
+            "Type": "line",
+            "Name": "Line3",
+            "ZIndex": 1,
+            "StartPoint": {
+              "X": "0in",
+              "Y": "0in"
+            },
+            "EndPoint": {
+              "X": "10in",
+              "Y": "0.0208in"
+            }
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox18",
+            "ZIndex": 2,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "=\"Portfolio: \" & Count(Fields!portfolioNumber.Value, \"customerData\") & \" - \" & Count(Fields!clientName.Value, \"customerData\")",
+            "Style": {
+              "Border": {
+                "Color": "#888888"
+              },
+              "FontSize": "12pt",
+              "FontWeight": "Bold",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt",
+              "Color": "#aaaaaa"
+            },
+            "Left": "0.2701in",
+            "Top": "0.041in",
+            "Width": "8.4063in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "line",
+            "Name": "Line4",
+            "ZIndex": 6,
+            "StartPoint": {
+              "X": "0in",
+              "Y": "1.2389in"
+            },
+            "EndPoint": {
+              "X": "9.9896in",
+              "Y": "1.2493in"
+            }
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox19",
+            "ZIndex": 7,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "Asset Allocation as of 19.11.2025 - Currency: USD",
+            "Style": {
+              "Border": {
+                "Color": "#888888"
+              },
+              "FontSize": "12pt",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt",
+              "Color": "#72bae4"
+            },
+            "Left": "0.2708in",
+            "Top": "0.3646in",
+            "Width": "8.4063in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox20",
+            "ZIndex": 8,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "New Page",
+            "Style": {
+              "Border": {
+                "Color": "#888888"
+              },
+              "FontSize": "12pt",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt",
+              "Color": "#aaaaaa"
+            },
+            "Left": "0.2604in",
+            "Top": "0.7292in",
+            "Width": "8.4063in",
+            "Height": "0.25in"
+          }
+        ]
+      },
+      "Body": {
+        "Height": "1.2084in",
+        "ReportItems": [
+          {
+            "Type": "table",
+            "Name": "Table1",
+            "DataSetName": "assetAllocation",
+            "TableColumns": [
+              {
+                "Width": "1.9133in"
+              },
+              {
+                "Width": "1.455in"
+              },
+              {
+                "Width": "1.4546in"
+              }
+            ],
+            "Header": {
+              "TableRows": [
+                {
+                  "Height": "0.2223in",
+                  "TableCells": [
+                    {
+                      "Item": {
+                        "Type": "textbox",
+                        "Name": "TextBox21",
+                        "CanGrow": true,
+                        "KeepTogether": true,
+                        "Style": {
+                          "BottomBorder": {
+                            "Style": "Solid"
+                          },
+                          "FontSize": "9pt",
+                          "PaddingLeft": "2pt",
+                          "PaddingRight": "2pt",
+                          "PaddingTop": "2pt",
+                          "PaddingBottom": "2pt"
+                        },
+                        "Width": "1.9133in",
+                        "Height": "0.2223in"
+                      }
+                    },
+                    {
+                      "Item": {
+                        "Type": "textbox",
+                        "Name": "TextBox22",
+                        "DataElementName": "value",
+                        "CanGrow": true,
+                        "KeepTogether": true,
+                        "Value": "USD",
+                        "Style": {
+                          "BottomBorder": {
+                            "Style": "Solid"
+                          },
+                          "FontSize": "9pt",
+                          "FontWeight": "Bold",
+                          "PaddingLeft": "2pt",
+                          "PaddingRight": "2pt",
+                          "PaddingTop": "2pt",
+                          "PaddingBottom": "2pt",
+                          "TextAlign": "Right"
+                        },
+                        "Width": "1.455in",
+                        "Height": "0.2223in"
+                      }
+                    },
+                    {
+                      "Item": {
+                        "Type": "textbox",
+                        "Name": "TextBox23",
+                        "DataElementName": "weight",
+                        "CanGrow": true,
+                        "KeepTogether": true,
+                        "Value": "Weight",
+                        "Style": {
+                          "BottomBorder": {
+                            "Style": "Solid"
+                          },
+                          "FontSize": "9pt",
+                          "FontWeight": "Bold",
+                          "PaddingLeft": "2pt",
+                          "PaddingRight": "2pt",
+                          "PaddingTop": "2pt",
+                          "PaddingBottom": "2pt",
+                          "TextAlign": "Right"
+                        },
+                        "Width": "1.4546in",
+                        "Height": "0.2223in"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "RepeatOnNewPage": true
+            },
+            "Details": {
+              "TableRows": [
+                {
+                  "Height": "0.2223in",
+                  "TableCells": [
+                    {
+                      "Item": {
+                        "Type": "textbox",
+                        "Name": "TextBox24",
+                        "DataElementName": "category",
+                        "CanGrow": true,
+                        "KeepTogether": true,
+                        "Value": "=Fields!category.Value",
+                        "Style": {
+                          "BottomBorder": {
+                            "Style": "Solid"
+                          },
+                          "FontSize": "9pt",
+                          "PaddingLeft": "2pt",
+                          "PaddingRight": "2pt",
+                          "PaddingTop": "2pt",
+                          "PaddingBottom": "2pt"
+                        },
+                        "Width": "1.9133in",
+                        "Height": "0.2223in"
+                      }
+                    },
+                    {
+                      "Item": {
+                        "Type": "textbox",
+                        "Name": "TextBox25",
+                        "DataElementName": "value",
+                        "CanGrow": true,
+                        "KeepTogether": true,
+                        "Value": "=Fields!value.Value",
+                        "Style": {
+                          "BottomBorder": {
+                            "Style": "Solid"
+                          },
+                          "FontSize": "9pt",
+                          "PaddingLeft": "2pt",
+                          "PaddingRight": "2pt",
+                          "PaddingTop": "2pt",
+                          "PaddingBottom": "2pt",
+                          "TextAlign": "Right"
+                        },
+                        "Width": "1.455in",
+                        "Height": "0.2223in"
+                      }
+                    },
+                    {
+                      "Item": {
+                        "Type": "textbox",
+                        "Name": "TextBox26",
+                        "DataElementName": "weight",
+                        "CanGrow": true,
+                        "KeepTogether": true,
+                        "Value": "=Fields!weight.Value",
+                        "Style": {
+                          "BottomBorder": {
+                            "Style": "Solid"
+                          },
+                          "FontSize": "9pt",
+                          "PaddingLeft": "2pt",
+                          "PaddingRight": "2pt",
+                          "PaddingTop": "2pt",
+                          "PaddingBottom": "2pt",
+                          "TextAlign": "Right"
+                        },
+                        "Width": "1.4546in",
+                        "Height": "0.2223in"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Footer": {
+              "TableRows": [
+                {
+                  "Height": "0.2221in",
+                  "TableCells": [
+                    {
+                      "Item": {
+                        "Type": "textbox",
+                        "Name": "TextBox27",
+                        "CanGrow": true,
+                        "KeepTogether": true,
+                        "Value": "Total Value",
+                        "Style": {
+                          "FontSize": "9pt",
+                          "FontWeight": "Bold",
+                          "PaddingLeft": "2pt",
+                          "PaddingRight": "2pt",
+                          "PaddingTop": "2pt",
+                          "PaddingBottom": "2pt"
+                        },
+                        "Width": "1.9133in",
+                        "Height": "0.2221in"
+                      }
+                    },
+                    {
+                      "Item": {
+                        "Type": "textbox",
+                        "Name": "TextBox28",
+                        "CanGrow": true,
+                        "KeepTogether": true,
+                        "Value": "=\"=Sum\" & Fields!value.Value",
+                        "Style": {
+                          "FontSize": "9pt",
+                          "PaddingLeft": "2pt",
+                          "PaddingRight": "2pt",
+                          "PaddingTop": "2pt",
+                          "PaddingBottom": "2pt",
+                          "TextAlign": "Right"
+                        },
+                        "Width": "1.455in",
+                        "Height": "0.2221in"
+                      }
+                    },
+                    {
+                      "Item": {
+                        "Type": "textbox",
+                        "Name": "TextBox29",
+                        "CanGrow": true,
+                        "KeepTogether": true,
+                        "Value": "=\"=Sum\" & Fields!weight.Value",
+                        "Style": {
+                          "FontSize": "9pt",
+                          "PaddingLeft": "2pt",
+                          "PaddingRight": "2pt",
+                          "PaddingTop": "2pt",
+                          "PaddingBottom": "2pt",
+                          "TextAlign": "Right"
+                        },
+                        "Width": "1.4546in",
+                        "Height": "0.2221in"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "Left": "0.2604in",
+            "Top": "0.5417in",
+            "Width": "4.8229in",
+            "Height": "0.6667in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox30",
+            "ZIndex": 1,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "Pie-Chart",
+            "Style": {
+              "BottomBorder": {
+                "Style": "Solid"
+              },
+              "FontWeight": "Bold",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "0.2604in",
+            "Top": "0.0938in",
+            "Width": "4.8229in",
+            "Height": "0.25in"
           }
         ]
       }
