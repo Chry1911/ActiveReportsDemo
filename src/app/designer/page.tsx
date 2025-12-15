@@ -51,6 +51,9 @@ export default function DesignerPage() {
           <ARJSViewer
             reportUri="/reports/financial.rdlx-json"
             zoom={"FitToWidth"}
+            sidebarVisible={true}
+            panelsLayout={"sidebar"}
+            availableExports={["pdf", "xlsx"]}
             ref={viewerRef as any}
           />
         </div>

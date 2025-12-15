@@ -1,0 +1,106 @@
+{
+  "portfolios": [
+    {
+      "code": "PROVA01",
+      "name": "European Equity Core",
+      "currency": "EUR",
+      "group": "EQUITY",
+      "totalValue": 1543200,
+      "lastUpdate": "2025-04-10"
+    },
+    {
+      "code": "PROVA02",
+      "name": "Global Bond Strategy",
+      "currency": "EUR",
+      "group": "BOND",
+      "totalValue": 982450,
+      "lastUpdate": "2025-04-10"
+    },
+    {
+      "code": "PROVA04",
+      "name": "Global Equity Value - Institutional EUR",
+      "currency": "EUR",
+      "group": "EQUITY",
+      "totalValue": 2410163,
+      "lastUpdate": "2025-04-10"
+    }
+  ],
+
+  "composition": [
+    { "code": "PROVA01", "date": "2024-12-31", "weight": 0.072, "weightExposed": 0.075, "value": 111100 },
+    { "code": "PROVA01", "date": "2025-01-31", "weight": 0.081, "weightExposed": 0.084, "value": 125400 },
+    { "code": "PROVA01", "date": "2025-02-28", "weight": 0.089, "weightExposed": 0.092, "value": 137300 },
+    { "code": "PROVA01", "date": "2025-03-31", "weight": 0.094, "weightExposed": 0.098, "value": 145200 },
+    { "code": "PROVA01", "date": "2025-04-10", "weight": 0.091, "weightExposed": 0.095, "value": 140600 },
+
+    { "code": "PROVA02", "date": "2024-12-31", "weight": 0.112, "weightExposed": 0.110, "value": 110000 },
+    { "code": "PROVA02", "date": "2025-01-31", "weight": 0.118, "weightExposed": 0.116, "value": 116500 },
+    { "code": "PROVA02", "date": "2025-02-28", "weight": 0.121, "weightExposed": 0.119, "value": 119800 },
+    { "code": "PROVA02", "date": "2025-03-31", "weight": 0.125, "weightExposed": 0.123, "value": 123900 },
+    { "code": "PROVA02", "date": "2025-04-10", "weight": 0.128, "weightExposed": 0.126, "value": 126400 },
+
+    { "code": "PROVA04", "date": "2024-12-31", "weight": 0.065, "weightExposed": 0.070, "value": 156800 },
+    { "code": "PROVA04", "date": "2025-01-31", "weight": 0.082, "weightExposed": 0.087, "value": 198500 },
+    { "code": "PROVA04", "date": "2025-02-28", "weight": 0.095, "weightExposed": 0.101, "value": 229800 },
+    { "code": "PROVA04", "date": "2025-03-31", "weight": 0.125, "weightExposed": 0.130, "value": 298000 },
+    { "code": "PROVA04", "date": "2025-04-10", "weight": 0.119, "weightExposed": 0.125, "value": 286400 }
+  ],
+
+  "summaryByPortfolio": [
+    {
+      "code": "PROVA01",
+      "avgWeight": 0.085,
+      "minWeight": 0.072,
+      "maxWeight": 0.094,
+      "minValue": 111100,
+      "maxValue": 145200,
+      "lastDate": "2025-04-10"
+    },
+    {
+      "code": "PROVA02",
+      "avgWeight": 0.121,
+      "minWeight": 0.112,
+      "maxWeight": 0.128,
+      "minValue": 110000,
+      "maxValue": 126400,
+      "lastDate": "2025-04-10"
+    },
+    {
+      "code": "PROVA04",
+      "avgWeight": 0.097,
+      "minWeight": 0.065,
+      "maxWeight": 0.125,
+      "minValue": 156800,
+      "maxValue": 298000,
+      "lastDate": "2025-04-10"
+    }
+  ],
+
+  "summaryByDate": [
+    {
+      "date": "2024-12-31",
+      "totalValue": 377900,
+      "avgWeight": 0.083
+    },
+    {
+      "date": "2025-01-31",
+      "totalValue": 440400,
+      "avgWeight": 0.094
+    },
+    {
+      "date": "2025-02-28",
+      "totalValue": 486900,
+      "avgWeight": 0.102
+    },
+    {
+      "date": "2025-03-31",
+      "totalValue": 567100,
+      "avgWeight": 0.115
+    },
+    {
+      "date": "2025-04-10",
+      "totalValue": 553400,
+      "avgWeight": 0.113
+    }
+  ]
+}

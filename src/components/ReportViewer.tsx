@@ -1,17 +1,37 @@
 import { Viewer } from "@grapecity/activereports-react";
 import { Props as ViewerProps } from "@grapecity/activereports-react";
+import { PdfExport, HtmlExport, XlsxExport } from "@grapecity/activereports";
 import React from "react";
 import "@grapecity/activereports/styles/ar-js-ui.css";
 import "@grapecity/activereports/styles/ar-js-viewer.css";
 
-export type ViewerWrapperProps = ViewerProps & { reportUri: string };
+export type ViewerWrapperProps = ViewerProps & {
+  reportUri: string;
+  availableExports?: string[];
+};
 export type ViewerHandle = {
   open: (definition: any) => Promise<void>;
 };
 
 const ViewerWrapper = React.forwardRef<ViewerHandle, ViewerWrapperProps>(
   (props, ref) => {
+    const { availableExports, ...viewerProps } = props;
     const innerRef = React.useRef<Viewer>(null);
+
+    React.useEffect(() => {
+      void PdfExport;
+      void HtmlExport;
+      void XlsxExport;
+    }, []);
+
+    React.useEffect(() => {
+      if (innerRef.current) {
+        innerRef.current.Viewer.availableExports = availableExports ?? [
+          "pdf",
+          "xlsx",
+        ];
+      }
+    }, [availableExports]);
 
     React.useEffect(() => {
       const loadReport = async () => {
@@ -84,7 +104,7 @@ const ViewerWrapper = React.forwardRef<ViewerHandle, ViewerWrapperProps>(
       []
     );
 
-    return <Viewer {...props} ref={innerRef} />;
+    return <Viewer {...viewerProps} ref={innerRef} />;
   }
 );
 
