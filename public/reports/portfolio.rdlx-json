@@ -1,5 +1,5 @@
 {
-  "Name": "NuovoReport1111",
+  "Name": "NuovoReport11111",
   "Width": "0in",
   "EmbeddedImages": [
     {
@@ -574,8 +574,8 @@
               "PaddingBottom": "2pt",
               "Color": "#aaaaaa"
             },
-            "Left": "0.2701in",
-            "Top": "0.041in",
+            "Left": "0.2597in",
+            "Top": "0.1035in",
             "Width": "8.4063in",
             "Height": "0.25in"
           },
@@ -634,14 +634,14 @@
               "Color": "#aaaaaa"
             },
             "Left": "0.2604in",
-            "Top": "0.7292in",
+            "Top": "0.6563in",
             "Width": "8.4063in",
             "Height": "0.25in"
           }
         ]
       },
       "Body": {
-        "Height": "1.2084in",
+        "Height": "3.5209in",
         "ReportItems": [
           {
             "Type": "table",
@@ -879,8 +879,8 @@
                 }
               ]
             },
-            "Left": "0.2604in",
-            "Top": "0.5417in",
+            "Left": "0.2083in",
+            "Top": "0.5313in",
             "Width": "4.8229in",
             "Height": "0.6667in"
           },
@@ -901,10 +901,180 @@
               "PaddingTop": "2pt",
               "PaddingBottom": "2pt"
             },
-            "Left": "0.2604in",
-            "Top": "0.0938in",
+            "Left": "0.2083in",
+            "Top": "0.0834in",
             "Width": "4.8229in",
             "Height": "0.25in"
+          },
+          {
+            "Type": "textbox",
+            "Name": "TextBox31",
+            "ZIndex": 2,
+            "CanGrow": true,
+            "KeepTogether": true,
+            "Value": "Pie-Chart",
+            "Style": {
+              "BottomBorder": {
+                "Style": "Solid"
+              },
+              "FontWeight": "Bold",
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Left": "5.0938in",
+            "Top": "0.0834in",
+            "Width": "4.8229in",
+            "Height": "0.25in"
+          },
+          {
+            "Type": "chart",
+            "Name": "Chart1",
+            "ZIndex": 3,
+            "DataSetName": "assetAllocation",
+            "Style": {
+              "PaddingLeft": "2pt",
+              "PaddingRight": "2pt",
+              "PaddingTop": "2pt",
+              "PaddingBottom": "2pt"
+            },
+            "Header": {
+              "Style": {
+                "PaddingTop": "4pt",
+                "PaddingBottom": "2pt",
+                "FontWeight": "Bold"
+              },
+              "Title": "Chart Title"
+            },
+            "Footer": {
+              "Style": {
+                "PaddingTop": "2pt",
+                "PaddingBottom": "4pt"
+              }
+            },
+            "Palette": "Cyborg",
+            "PlotArea": {
+              "Axes": [
+                {
+                  "LabelStyle": {
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt"
+                  },
+                  "LineStyle": {
+                    "Border": {
+                      "Style": "Solid"
+                    }
+                  },
+                  "MajorGridStyle": {
+                    "Border": {
+                      "Color": "Gray",
+                      "Style": "Solid"
+                    }
+                  },
+                  "Plots": [
+                    "Plot1"
+                  ],
+                  "Position": "None",
+                  "Title": "Category",
+                  "TitleStyle": {
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt"
+                  }
+                },
+                {
+                  "AxisType": "Y",
+                  "Format": "p0",
+                  "LabelStyle": {
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt"
+                  },
+                  "LineStyle": {
+                    "Border": {
+                      "Style": "Solid"
+                    }
+                  },
+                  "MajorGrid": true,
+                  "MajorGridStyle": {
+                    "Border": {
+                      "Color": "Gray",
+                      "Style": "Solid"
+                    }
+                  },
+                  "Plots": [
+                    "Plot1"
+                  ],
+                  "Position": "None",
+                  "Scale": "Percentage",
+                  "Title": "Value",
+                  "TitleStyle": {
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt"
+                  }
+                }
+              ]
+            },
+            "Plots": [
+              {
+                "Name": "Plot1",
+                "PlotType": "Pie",
+                "Config": {
+                  "AxisMode": "Radial",
+                  "Bar": {
+                    "BottomWidth": 0.55,
+                    "NeckHeight": 1,
+                    "Overlap": 0,
+                    "TopWidth": 0.55,
+                    "Width": 1
+                  },
+                  "SeriesArrangement": "Stack"
+                },
+                "SeriesGroupings": [
+                  {
+                    "Grouping": {
+                      "Name": "Plot1_SeriesGroup0",
+                      "GroupExpressions": [
+                        "=Fields!value.Value"
+                      ]
+                    },
+                    "Sorting": [
+                      {
+                        "Value": "=Fields!value.Value"
+                      }
+                    ]
+                  }
+                ],
+                "DataSeries": [
+                  {
+                    "Name": "{Count(category)}",
+                    "Values": [
+                      {
+                        "Value": "=Count(Fields!category.Value)"
+                      }
+                    ]
+                  }
+                ],
+                "ColorSeries": {
+                  "Style": {
+                    "PaddingRight": "10pt",
+                    "PaddingTop": "4pt",
+                    "PaddingBottom": "2pt"
+                  }
+                }
+              }
+            ],
+            "Left": "5.1146in",
+            "Top": "0.5209in",
+            "Width": "4in",
+            "Height": "3in"
           }
         ]
       }
