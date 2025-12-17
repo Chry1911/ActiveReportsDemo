@@ -64,14 +64,25 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
       ? fileName
       : `${fileName}.rdlx-json`;
     if ("showSaveFilePicker" in window) {
-      const handle = await (window as any).showSaveFilePicker({
-        suggestedName,
-        excludeAcceptAllOption: false,
-      });
-      const writable = await handle.createWritable();
-      await writable.write(new Blob([content], { type: "application/json" }));
-      await writable.close();
-      return true;
+      try {
+        const handle = await (window as any).showSaveFilePicker({
+          suggestedName,
+          excludeAcceptAllOption: false,
+        });
+        const writable = await handle.createWritable();
+        await writable.write(new Blob([content], { type: "application/json" }));
+        await writable.close();
+        return true;
+      } catch (err: any) {
+        if (
+          err &&
+          (err.name === "AbortError" || /aborted/i.test(err.message))
+        ) {
+          return false;
+        }
+        downloadReport(content, suggestedName);
+        return false;
+      }
     } else {
       downloadReport(content, suggestedName);
       return false;
