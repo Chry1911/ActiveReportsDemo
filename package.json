@@ -13,6 +13,7 @@
     "@grapecity/activereports-localization": "^5.2.6",
     "@grapecity/activereports-react": "^5.2.6",
     "@mescius/activereportsjs-react": "^6.0.0",
+    "@radix-ui/react-dialog": "^1.1.15",
     "next": "16.0.8",
     "react": "19.2.1",
     "react-dom": "19.2.1"
