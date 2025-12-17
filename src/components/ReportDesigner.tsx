@@ -12,6 +12,51 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
   const [saveDialogOpen, setSaveDialogOpen] = React.useState(false);
   const [fileNameInput, setFileNameInput] = React.useState<string>("");
   const [pendingReportJson, setPendingReportJson] = React.useState<string>("");
+  const [defaultDirHandle, setDefaultDirHandle] = React.useState<any>(null);
+  const dbName = "arjs-fsa";
+  const storeName = "handles";
+  const openDb = React.useCallback(() => {
+    return new Promise<IDBDatabase>((resolve, reject) => {
+      const req = indexedDB.open(dbName, 1);
+      req.onupgradeneeded = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains(storeName)) {
+          db.createObjectStore(storeName);
+        }
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }, []);
+  const getStoredDirHandle = React.useCallback(async () => {
+    const db = await openDb();
+    return await new Promise<any>((resolve, reject) => {
+      const tx = db.transaction(storeName, "readonly");
+      const req = tx.objectStore(storeName).get("defaultSaveDir");
+      req.onsuccess = () => resolve(req.result ?? null);
+      req.onerror = () => reject(req.error);
+    });
+  }, [openDb]);
+  const setStoredDirHandle = React.useCallback(
+    async (handle: any) => {
+      const db = await openDb();
+      return await new Promise<void>((resolve, reject) => {
+        const tx = db.transaction(storeName, "readwrite");
+        const req = tx.objectStore(storeName).put(handle, "defaultSaveDir");
+        req.onsuccess = () => resolve();
+        req.onerror = () => reject(req.error);
+      });
+    },
+    [openDb]
+  );
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const h = await getStoredDirHandle();
+        if (h) setDefaultDirHandle(h);
+      } catch {}
+    })();
+  }, [getStoredDirHandle]);
 
   const newReportTemplate = React.useMemo(
     () => ({
@@ -65,11 +110,35 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
       : `${fileName}.rdlx-json`;
     if ("showSaveFilePicker" in window) {
       try {
-        const handle = await (window as any).showSaveFilePicker({
-          suggestedName,
-          excludeAcceptAllOption: false,
+        if (defaultDirHandle) {
+          let perm = await defaultDirHandle.queryPermission?.({
+            mode: "readwrite",
+          });
+          if (perm !== "granted") {
+            perm = await defaultDirHandle.requestPermission?.({
+              mode: "readwrite",
+            });
+          }
+          if (perm === "granted") {
+            const fileHandle = await defaultDirHandle.getFileHandle(
+              suggestedName,
+              { create: true }
+            );
+            const writable = await fileHandle.createWritable();
+            await writable.write(
+              new Blob([content], { type: "application/json" })
+            );
+            await writable.close();
+            return true;
+          }
+        }
+        const dir = await (window as any).showDirectoryPicker();
+        await setStoredDirHandle(dir);
+        setDefaultDirHandle(dir);
+        const fileHandle = await dir.getFileHandle(suggestedName, {
+          create: true,
         });
-        const writable = await handle.createWritable();
+        const writable = await fileHandle.createWritable();
         await writable.write(new Blob([content], { type: "application/json" }));
         await writable.close();
         return true;
