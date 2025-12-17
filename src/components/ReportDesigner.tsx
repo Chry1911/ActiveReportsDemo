@@ -12,51 +12,12 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
   const [saveDialogOpen, setSaveDialogOpen] = React.useState(false);
   const [fileNameInput, setFileNameInput] = React.useState<string>("");
   const [pendingReportJson, setPendingReportJson] = React.useState<string>("");
-  const [defaultDirHandle, setDefaultDirHandle] = React.useState<any>(null);
-  const dbName = "arjs-fsa";
-  const storeName = "handles";
-  const openDb = React.useCallback(() => {
-    return new Promise<IDBDatabase>((resolve, reject) => {
-      const req = indexedDB.open(dbName, 1);
-      req.onupgradeneeded = () => {
-        const db = req.result;
-        if (!db.objectStoreNames.contains(storeName)) {
-          db.createObjectStore(storeName);
-        }
-      };
-      req.onsuccess = () => resolve(req.result);
-      req.onerror = () => reject(req.error);
-    });
-  }, []);
-  const getStoredDirHandle = React.useCallback(async () => {
-    const db = await openDb();
-    return await new Promise<any>((resolve, reject) => {
-      const tx = db.transaction(storeName, "readonly");
-      const req = tx.objectStore(storeName).get("defaultSaveDir");
-      req.onsuccess = () => resolve(req.result ?? null);
-      req.onerror = () => reject(req.error);
-    });
-  }, [openDb]);
-  const setStoredDirHandle = React.useCallback(
-    async (handle: any) => {
-      const db = await openDb();
-      return await new Promise<void>((resolve, reject) => {
-        const tx = db.transaction(storeName, "readwrite");
-        const req = tx.objectStore(storeName).put(handle, "defaultSaveDir");
-        req.onsuccess = () => resolve();
-        req.onerror = () => reject(req.error);
-      });
-    },
-    [openDb]
-  );
-  React.useEffect(() => {
-    (async () => {
-      try {
-        const h = await getStoredDirHandle();
-        if (h) setDefaultDirHandle(h);
-      } catch {}
-    })();
-  }, [getStoredDirHandle]);
+  const [openChoiceDialog, setOpenChoiceDialog] = React.useState(true);
+  const [templates, setTemplates] = React.useState<Array<{ name: string }>>([]);
+  const [selectedTemplate, setSelectedTemplate] = React.useState<string>("");
+  const [openResolver, setOpenResolver] = React.useState<
+    ((value: any) => void) | null
+  >(null);
 
   const newReportTemplate = React.useMemo(
     () => ({
@@ -104,56 +65,20 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
     URL.revokeObjectURL(url);
   };
 
-  const showSavePicker = async (fileName: string, content: string) => {
-    const suggestedName = fileName.endsWith(".rdlx-json")
+  const saveToServer = async (fileName: string, content: string) => {
+    const name = fileName.endsWith(".rdlx-json")
       ? fileName
       : `${fileName}.rdlx-json`;
-    if ("showSaveFilePicker" in window) {
-      try {
-        if (defaultDirHandle) {
-          let perm = await defaultDirHandle.queryPermission?.({
-            mode: "readwrite",
-          });
-          if (perm !== "granted") {
-            perm = await defaultDirHandle.requestPermission?.({
-              mode: "readwrite",
-            });
-          }
-          if (perm === "granted") {
-            const fileHandle = await defaultDirHandle.getFileHandle(
-              suggestedName,
-              { create: true }
-            );
-            const writable = await fileHandle.createWritable();
-            await writable.write(
-              new Blob([content], { type: "application/json" })
-            );
-            await writable.close();
-            return true;
-          }
-        }
-        const dir = await (window as any).showDirectoryPicker();
-        await setStoredDirHandle(dir);
-        setDefaultDirHandle(dir);
-        const fileHandle = await dir.getFileHandle(suggestedName, {
-          create: true,
-        });
-        const writable = await fileHandle.createWritable();
-        await writable.write(new Blob([content], { type: "application/json" }));
-        await writable.close();
-        return true;
-      } catch (err: any) {
-        if (
-          err &&
-          (err.name === "AbortError" || /aborted/i.test(err.message))
-        ) {
-          return false;
-        }
-        downloadReport(content, suggestedName);
-        return false;
-      }
-    } else {
-      downloadReport(content, suggestedName);
+    try {
+      const res = await fetch("/api/reports", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, content }),
+      });
+      if (!res.ok) throw new Error("save_failed");
+      return true;
+    } catch {
+      downloadReport(content, name);
       return false;
     }
   };
@@ -167,7 +92,7 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
   };
 
   const confirmSave = async () => {
-    const ok = await showSavePicker(fileNameInput.trim(), pendingReportJson);
+    const ok = await saveToServer(fileNameInput.trim(), pendingReportJson);
     setSaveDialogOpen(false);
     setPendingReportJson("");
     return ok;
@@ -204,50 +129,142 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
         }
         onOpen={async () => {
           try {
-            const reportResponse = await fetch(props.reportUri);
-            const reportDefinition = await reportResponse.json();
-            const dataResponse = await fetch("/data/realData.json");
-            const data = await dataResponse.json();
-            const reportWithData = {
-              ...reportDefinition,
-              Page: {
-                ...(reportDefinition.Page ?? {}),
-                PaperOrientation: props.pageOrientation ?? "Landscape",
-                PageWidth:
-                  (props.pageOrientation ?? "Landscape") === "Landscape"
-                    ? "11in"
-                    : "8.5in",
-                PageHeight:
-                  (props.pageOrientation ?? "Landscape") === "Landscape"
-                    ? "8.5in"
-                    : "11in",
-              },
-              DataSources: reportDefinition.DataSources?.map((ds: any) => {
-                if (ds.Name === "PortfolioData") {
-                  return {
-                    ...ds,
-                    ConnectionProperties: {
-                      ...ds.ConnectionProperties,
-                      ConnectString: `jsondata=${JSON.stringify(data)}`,
-                    },
-                  };
-                }
-                return ds;
-              }),
-            };
-            return Promise.resolve({
-              definition: reportWithData,
-              displayName: "Template",
-            });
-          } catch (error) {
-            console.error("Error opening report:", error);
-            return Promise.resolve({
-              id: props.reportUri,
-              displayName: "Template",
-            });
+            const listRes = await fetch("/api/reports/list");
+            const list = await listRes.json();
+            setTemplates(list ?? []);
+            if (Array.isArray(list) && list.length > 0) {
+              setSelectedTemplate(list[0].name);
+            }
+          } catch {
+            setTemplates([]);
           }
+          const promise = new Promise<any>((resolve) => {
+            setOpenResolver(() => resolve);
+            setOpenChoiceDialog(true);
+          });
+          return promise;
         }}
       />
+      {openChoiceDialog && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="relative z-10 w-full max-w-lg rounded-lg bg-white p-6 shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">Apri template</h3>
+            <div className="grid gap-4">
+              <div>
+                <div className="mb-2 text-sm text-zinc-600">Esistenti</div>
+                <div className="max-h-40 overflow-auto border border-zinc-200 rounded">
+                  {templates.length === 0 ? (
+                    <div className="p-3 text-sm text-zinc-500">
+                      Nessun template
+                    </div>
+                  ) : (
+                    templates.map((t) => (
+                      <button
+                        key={t.name}
+                        className={`w-full text-left px-3 py-2 text-sm ${
+                          selectedTemplate === t.name
+                            ? "bg-black text-white"
+                            : ""
+                        }`}
+                        onClick={() => setSelectedTemplate(t.name)}
+                      >
+                        {t.name}
+                      </button>
+                    ))
+                  )}
+                </div>
+              </div>
+              <div className="flex justify-end gap-3">
+                <button
+                  className="rounded border border-zinc-300 px-4 py-2 text-sm"
+                  onClick={() => {
+                    const def = newReportTemplate;
+                    const resolve = openResolver;
+                    setOpenChoiceDialog(false);
+                    setOpenResolver(null);
+                    resolve &&
+                      resolve({
+                        definition: def,
+                        displayName: "Nuovo Report",
+                      });
+                  }}
+                >
+                  Crea nuovo
+                </button>
+                <button
+                  className="rounded bg-black px-4 py-2 text-sm text-white hover:bg-[#383838]"
+                  onClick={async () => {
+                    const name = selectedTemplate || (templates[0]?.name ?? "");
+                    if (!name) return;
+                    try {
+                      const res = await fetch(
+                        `/api/reports?name=${encodeURIComponent(name)}`
+                      );
+                      const reportDefinition = await res.json();
+                      const dataResponse = await fetch("/data/realData.json");
+                      const data = await dataResponse.json();
+                      const reportWithData = {
+                        ...reportDefinition,
+                        Page: {
+                          ...(reportDefinition.Page ?? {}),
+                          PaperOrientation:
+                            props.pageOrientation ?? "Landscape",
+                          PageWidth:
+                            (props.pageOrientation ?? "Landscape") ===
+                            "Landscape"
+                              ? "11in"
+                              : "8.5in",
+                          PageHeight:
+                            (props.pageOrientation ?? "Landscape") ===
+                            "Landscape"
+                              ? "8.5in"
+                              : "11in",
+                        },
+                        DataSources: reportDefinition.DataSources?.map(
+                          (ds: any) => {
+                            if (ds.Name === "PortfolioData") {
+                              return {
+                                ...ds,
+                                ConnectionProperties: {
+                                  ...ds.ConnectionProperties,
+                                  ConnectString: `jsondata=${JSON.stringify(
+                                    data
+                                  )}`,
+                                },
+                              };
+                            }
+                            return ds;
+                          }
+                        ),
+                      };
+                      const resolve = openResolver;
+                      setOpenChoiceDialog(false);
+                      setOpenResolver(null);
+                      resolve &&
+                        resolve({
+                          definition: reportWithData,
+                          displayName: name,
+                        });
+                    } catch {
+                      const resolve = openResolver;
+                      setOpenChoiceDialog(false);
+                      setOpenResolver(null);
+                      resolve &&
+                        resolve({
+                          id: name,
+                          displayName: name,
+                        });
+                    }
+                  }}
+                >
+                  Apri selezionato
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       {saveDialogOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
