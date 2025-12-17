@@ -197,11 +197,20 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
                     const resolve = openResolver;
                     setOpenChoiceDialog(false);
                     setOpenResolver(null);
-                    resolve &&
+                    if (resolve) {
                       resolve({
                         definition: def,
                         displayName: "Nuovo Report",
                       });
+                    } else {
+                      const inst: any = ref.current as any;
+                      if (inst && typeof inst.createReport === "function") {
+                        void inst.createReport({
+                          definition: def,
+                          displayName: "Nuovo Report",
+                        });
+                      }
+                    }
                   }}
                 >
                   Crea nuovo
@@ -255,20 +264,30 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
                       const resolve = openResolver;
                       setOpenChoiceDialog(false);
                       setOpenResolver(null);
-                      resolve &&
+                      if (resolve) {
                         resolve({
                           definition: reportWithData,
                           displayName: name,
                         });
+                      } else {
+                        const inst: any = ref.current as any;
+                        if (inst && typeof inst.setReport === "function") {
+                          await inst.setReport({
+                            definition: reportWithData,
+                            displayName: name,
+                          });
+                        }
+                      }
                     } catch {
                       const resolve = openResolver;
                       setOpenChoiceDialog(false);
                       setOpenResolver(null);
-                      resolve &&
+                      if (resolve) {
                         resolve({
                           id: name,
                           displayName: name,
                         });
+                      }
                     }
                   }}
                 >
