@@ -135,12 +135,38 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
         ref={ref}
         onSave={handleSave}
         onSaveAs={handleSaveAs}
-        onCreate={() =>
-          Promise.resolve({
-            definition: newReportTemplate,
-            displayName: "Nuovo Report",
-          })
-        }
+        onCreate={async () => {
+          try {
+            const dataResponse = await fetch("/data/realData.json");
+            const data = await dataResponse.json();
+            const def = {
+              ...newReportTemplate,
+              DataSources: newReportTemplate.DataSources?.map((ds: any) => {
+                if (ds.Name === "PortfolioData") {
+                  return {
+                    ...ds,
+                    ConnectionProperties: {
+                      ...ds.ConnectionProperties,
+                      ConnectString: `jsondata=${JSON.stringify(data)}`,
+                    },
+                  };
+                }
+                return ds;
+              }),
+            };
+            return {
+              definition: def,
+              displayName: "Nuovo Report",
+              reportType: "CPL",
+            };
+          } catch {
+            return {
+              definition: newReportTemplate,
+              displayName: "Nuovo Report",
+              reportType: "CPL",
+            };
+          }
+        }}
         onOpen={async () => {
           try {
             const listRes = await fetch("/api/reports/list");
@@ -192,23 +218,67 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
               <div className="flex justify-end gap-3">
                 <button
                   className="rounded border border-zinc-300 px-4 py-2 text-sm"
-                  onClick={() => {
-                    const def = newReportTemplate;
+                  onClick={async () => {
                     const resolve = openResolver;
-                    setOpenChoiceDialog(false);
-                    setOpenResolver(null);
-                    if (resolve) {
-                      resolve({
-                        definition: def,
-                        displayName: "Nuovo Report",
-                      });
-                    } else {
-                      const inst: any = ref.current as any;
-                      if (inst && typeof inst.createReport === "function") {
-                        void inst.createReport({
+                    try {
+                      const dataResponse = await fetch("/data/realData.json");
+                      const data = await dataResponse.json();
+                      const def = {
+                        ...newReportTemplate,
+                        DataSources: newReportTemplate.DataSources?.map(
+                          (ds: any) => {
+                            if (ds.Name === "PortfolioData") {
+                              return {
+                                ...ds,
+                                ConnectionProperties: {
+                                  ...ds.ConnectionProperties,
+                                  ConnectString: `jsondata=${JSON.stringify(
+                                    data
+                                  )}`,
+                                },
+                              };
+                            }
+                            return ds;
+                          }
+                        ),
+                      };
+                      setOpenChoiceDialog(false);
+                      setOpenResolver(null);
+                      if (resolve) {
+                        resolve({
                           definition: def,
                           displayName: "Nuovo Report",
+                          reportType: "CPL",
                         });
+                      } else {
+                        const inst: any = ref.current as any;
+                        if (inst && typeof inst.createReport === "function") {
+                          void inst.createReport({
+                            definition: def,
+                            displayName: "Nuovo Report",
+                            reportType: "CPL",
+                          });
+                        }
+                      }
+                    } catch {
+                      const def = newReportTemplate;
+                      setOpenChoiceDialog(false);
+                      setOpenResolver(null);
+                      if (resolve) {
+                        resolve({
+                          definition: def,
+                          displayName: "Nuovo Report",
+                          reportType: "CPL",
+                        });
+                      } else {
+                        const inst: any = ref.current as any;
+                        if (inst && typeof inst.createReport === "function") {
+                          void inst.createReport({
+                            definition: def,
+                            displayName: "Nuovo Report",
+                            reportType: "CPL",
+                          });
+                        }
                       }
                     }
                   }}
