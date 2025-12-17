@@ -1,5 +1,5 @@
 {
-  "Name": "NuovoReport111111111111111111111111111",
+  "Name": "NuovoReport1111111111111111111111111111",
   "Width": "0in",
   "Language": "en-US",
   "EmbeddedImages": [
@@ -1818,7 +1818,7 @@
         "ColumnSpacing": "0.5in",
         "PaperOrientation": "Landscape"
       },
-      "Width": "10in",
+      "Width": "10.0834in",
       "PageHeader": {
         "Height": "1.2493in",
         "ReportItems": [
@@ -1959,10 +1959,10 @@
                 "Width": "0.9179in"
               },
               {
-                "Width": "0.5429in"
+                "Width": "0.5534in"
               },
               {
-                "Width": "1.2513in"
+                "Width": "1.0742in"
               },
               {
                 "Width": "1.0429in"
@@ -1971,7 +1971,7 @@
                 "Width": "1.0117in"
               },
               {
-                "Width": "0.8866in"
+                "Width": "1.0533in"
               },
               {
                 "Width": "0.7927in"
@@ -2093,7 +2093,7 @@
                           "PaddingBottom": "2pt",
                           "TextAlign": "Right"
                         },
-                        "Width": "0.5429in",
+                        "Width": "0.5534in",
                         "Height": "0.4792in"
                       }
                     },
@@ -2116,7 +2116,7 @@
                           "PaddingBottom": "2pt",
                           "TextAlign": "Right"
                         },
-                        "Width": "1.2513in",
+                        "Width": "1.0742in",
                         "Height": "0.4792in"
                       }
                     },
@@ -2185,7 +2185,7 @@
                           "PaddingBottom": "2pt",
                           "TextAlign": "Right"
                         },
-                        "Width": "0.8866in",
+                        "Width": "1.0533in",
                         "Height": "0.4792in"
                       }
                     },
@@ -2327,7 +2327,7 @@
                           "PaddingTop": "2pt",
                           "PaddingBottom": "2pt"
                         },
-                        "Width": "0.5429in",
+                        "Width": "0.5534in",
                         "Height": "0.25in"
                       }
                     },
@@ -2344,7 +2344,7 @@
                           "PaddingTop": "2pt",
                           "PaddingBottom": "2pt"
                         },
-                        "Width": "1.2513in",
+                        "Width": "1.0742in",
                         "Height": "0.25in"
                       }
                     },
@@ -2401,7 +2401,7 @@
                           "PaddingBottom": "2pt",
                           "TextAlign": "Right"
                         },
-                        "Width": "0.8866in",
+                        "Width": "1.0533in",
                         "Height": "0.25in"
                       }
                     },
@@ -2449,7 +2449,7 @@
             },
             "Left": "0.0834in",
             "Top": "0.2612in",
-            "Width": "9.8333in",
+            "Width": "9.8334in",
             "Height": "0.7292in"
           }
         ]
