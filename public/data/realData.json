@@ -42,9 +42,9 @@
     { "category": "Other", "value": 13947, "weight": 0.0033 }
   ],
   "currencyAllocation": [
-    { "currency": "US DOLLAR", "value": 3868490, "weight": 0.9057 },
-    { "currency": "EURO", "value": 402563, "weight": 0.0942 },
-    { "currency": "BRITISH POUND", "value": 354, "weight": 0.0001 }
+    { "currency": "US DOLLAR", "value": 3868490, "weight": 0.9057, "color": "yellow" },
+    { "currency": "EURO", "value": 402563, "weight": 0.0942, "color" : "green" },
+    { "currency": "BRITISH POUND", "value": 354, "weight": 0.0001, "color" : "red" }
   ],
   "cashAccounts": [
     {

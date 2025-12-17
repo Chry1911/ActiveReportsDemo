@@ -21,7 +21,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="it">
+    <html lang="it" suppressHydrationWarning>
       <head>
         <link
           rel="stylesheet"
@@ -36,7 +36,9 @@ export default function RootLayout({
           href="https://unpkg.com/@grapecity/activereports@5.2.6/styles/ar-js-viewer.css"
         />
       </head>
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
