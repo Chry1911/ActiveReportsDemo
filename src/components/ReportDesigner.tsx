@@ -18,6 +18,20 @@ const DesignerWrapper = (props: DesignerWrapperProps) => {
   const [openResolver, setOpenResolver] = React.useState<
     ((value: any) => void) | null
   >(null);
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const listRes = await fetch("/api/reports/list");
+        const list = await listRes.json();
+        setTemplates(list ?? []);
+        if (Array.isArray(list) && list.length > 0) {
+          setSelectedTemplate(list[0].name);
+        }
+      } catch {
+        setTemplates([]);
+      }
+    })();
+  }, []);
 
   const newReportTemplate = React.useMemo(
     () => ({
